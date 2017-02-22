@@ -14,8 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.components.moment;
+package za.co.mmagon.jwebswing.plugins.moment;
 
+import za.co.mmagon.jwebswing.plugins.moment.Moment;
 import java.util.Date;
 import org.junit.Assert;
 import org.junit.Test;

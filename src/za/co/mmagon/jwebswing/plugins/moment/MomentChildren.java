@@ -14,41 +14,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.components.moment;
+package za.co.mmagon.jwebswing.plugins.moment;
 
-import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
+import za.co.mmagon.jwebswing.components.newcomponents.*;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 
 /**
- * Specifies the am time ago flag for moment accessing
- * 
- * @author GedMarc
- * 2since 201/10/05
+ *
+ * @author Marc Magon
+ * @since 07 Aug 2015
+ * @version 1.0
  */
-public enum MomentAttributes implements AttributeDefinitions
+public interface MomentChildren extends GlobalChildren
 {
-    
-    am_time_ago;
 
-    private MomentAttributes()
-    {
-    }
-
-    private MomentAttributes(boolean isKeyword)
-    {
-        this.isKeyword = isKeyword;
-    }
-
-    private boolean isKeyword;
-
-    @Override
-    public boolean isKeyword()
-    {
-        return isKeyword;
-    }
-
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
 }

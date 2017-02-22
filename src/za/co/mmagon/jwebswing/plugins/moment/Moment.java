@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -14,11 +14,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.components.moment;
+package za.co.mmagon.jwebswing.plugins.moment;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import za.co.mmagon.jwebswing.base.angular.AngularPageConfigurator;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
@@ -27,17 +28,15 @@ import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
  * The Moment.js implementation
  * <p>
  * @author Marc Magon
+ * @param <J>
  * @since 29 Aug 2015
  * @version 1.0
  */
-public class Moment extends Div<MomentChildren, MomentAttributes, MomentFeatures, MomentEvents, Moment> implements GlobalChildren
+public class Moment<J extends Moment>
+        extends Div<MomentChildren, MomentAttributes, MomentFeatures, MomentEvents, J> implements GlobalChildren
 {
 
     private static final long serialVersionUID = 1L;
-    /**
-     * The angular module for the moment plugin
-     */
-    private static MomentAngularModule angularModule;
 
     /**
      * The default date formatter which is parsed
@@ -63,14 +62,15 @@ public class Moment extends Div<MomentChildren, MomentAttributes, MomentFeatures
     {
         this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
         DateFormatter.applyPattern("yyyy-MM-dd HH:mm:ss");
-
+        setAssignedDate(new Date());
+        AngularPageConfigurator.setAngularRequired(this, true);
     }
 
     /**
      * Constructs a new moment with the given date and tag type
      *
      * @param assignedDate The date to use
-     * @param myComponent  THe component tag to use
+     * @param myComponent THe component tag to use
      */
     public Moment(Date assignedDate, ComponentTypes myComponent)
     {
@@ -78,13 +78,14 @@ public class Moment extends Div<MomentChildren, MomentAttributes, MomentFeatures
         this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
         DateFormatter.applyPattern("yyyy-MM-dd HH:mm:ss");
         this.assignedDate = assignedDate;
+        AngularPageConfigurator.setAngularRequired(this, true);
     }
 
     /**
      * Constructs a new moment with the given angular variable name
      *
      * @param variableName The angular variable name to use
-     * @param myComponent  The component type to use
+     * @param myComponent The component type to use
      */
     public Moment(String variableName, ComponentTypes myComponent)
     {
@@ -92,6 +93,7 @@ public class Moment extends Div<MomentChildren, MomentAttributes, MomentFeatures
         this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
         DateFormatter.applyPattern("yyyy-MM-dd HH:mm:ss");
         this.variableName = variableName;
+        AngularPageConfigurator.setAngularRequired(this, true);
     }
 
     /**
@@ -104,6 +106,7 @@ public class Moment extends Div<MomentChildren, MomentAttributes, MomentFeatures
         this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
         DateFormatter.applyPattern("yyyy-MM-dd HH:mm:ss");
         this.assignedDate = assignedDate;
+        AngularPageConfigurator.setAngularRequired(this, true);
     }
 
     /**
@@ -116,6 +119,7 @@ public class Moment extends Div<MomentChildren, MomentAttributes, MomentFeatures
         this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
         DateFormatter.applyPattern("yyyy-MM-dd HH:mm:ss");
         this.variableName = variableName;
+        AngularPageConfigurator.setAngularRequired(this, true);
     }
 
     /**
@@ -213,14 +217,7 @@ public class Moment extends Div<MomentChildren, MomentAttributes, MomentFeatures
         if (!isConfigured())
         {
             addFeature(getFeature());
-            if (angularModule == null)
-            {
-
-                setAngularModule(new MomentAngularModule(this));
-            }
-            getAngularModules().add(angularModule);
             addAttribute(MomentAttributes.am_time_ago, buildAttributeString());
-            getPage().getOptions().setAngularEnabled(true);
         }
         super.preConfigure();
     }
@@ -409,16 +406,6 @@ public class Moment extends Div<MomentChildren, MomentAttributes, MomentFeatures
     public void AddAdditionFilter(int amount, DurationFilters part)
     {
         getAppliedFilters().put(MomentFilters.amAdd, "" + amount + "' : '" + part.toString() + "");
-    }
-
-    /**
-     * Sets the angular module for moment globally
-     *
-     * @param angularModule
-     */
-    public static void setAngularModule(MomentAngularModule angularModule)
-    {
-        Moment.angularModule = angularModule;
     }
 
     /**

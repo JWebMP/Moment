@@ -14,10 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.components.moment;
+package za.co.mmagon.jwebswing.plugins.moment;
 
 import za.co.mmagon.jwebswing.components.newcomponents.*;
-import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
+import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 
 /**
  *
@@ -25,7 +25,7 @@ import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
  * @since 07 Aug 2015
  * @version 1.0
  */
-public interface MomentEvents extends GlobalEvents
+public interface MomentFeatures extends GlobalFeatures
 {
 
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.components.moment;
+package za.co.mmagon.jwebswing.plugins.moment;
 
 import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
@@ -41,10 +41,8 @@ public class MomentFeature extends Feature<MomentOptions, MomentFeature> impleme
     public MomentFeature(Component forComponent)
     {
         super("MomentJS");
-        forComponent.getAngularModules().add(new MomentAngularModule(forComponent));
         setComponent(forComponent);
-        getJavascriptReferences().add(MomentReferencePool.MomentReference.getJavaScriptReference());
-        getJavascriptReferences().add(MomentReferencePool.MomentAngularReference.getJavaScriptReference());
+
     }
 
     @Override

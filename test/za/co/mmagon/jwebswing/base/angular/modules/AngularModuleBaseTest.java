@@ -21,7 +21,7 @@ import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.base.html.Body;
-import za.co.mmagon.jwebswing.components.moment.MomentAngularModule;
+import za.co.mmagon.jwebswing.plugins.moment.Moment;
 
 /**
  *
@@ -39,13 +39,12 @@ public class AngularModuleBaseTest extends BaseTestClass
     {
         Page p = getPage();
         Body b = p.getBody();
-        p.getAngular().setAppName("jwApp");
+        b.add(new Moment());
         AngularModuleBase comp = new JWAngularModule(b);
         System.out.println(comp.toString());
         Assert.assertEquals("var jwApp = angular.module('jwApp',[]);", comp.toString());
 
-        b.getAngularModules().add(new MomentAngularModule(b));
-        System.out.println(comp.toString());
+        System.out.println(p.toString(true));
 
     }
 }

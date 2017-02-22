@@ -14,33 +14,34 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.components.moment;
+package za.co.mmagon.jwebswing.plugins.moment;
 
-import za.co.mmagon.jwebswing.components.newcomponents.*;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
+import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
+import za.co.mmagon.jwebswing.base.angular.modules.AngularModuleBase;
 
 /**
- * All the options for the tooltip library
- * <p>
+ * Registers the moment angular module as available for the
+ *
  * @author GedMarc
- * @since Mar 4, 2015
+ * @since Oct 4, 2016
  * @version 1.0
- * <p>
- * <p>
+ *
  */
-public class MomentOptions extends JavaScriptPart
+public class MomentAngularModule extends AngularModuleBase
 {
 
-    public MomentOptions()
-    {
+    private static final long serialVersionUID = 1L;
 
+    public MomentAngularModule(ComponentHierarchyBase component)
+    {
+        super("angularMoment");
+        component.getJavascriptReferences().add(MomentReferencePool.MomentReference.getJavaScriptReference());
+        component.getJavascriptReferences().add(MomentReferencePool.MomentAngularReference.getJavaScriptReference());
     }
 
     @Override
-    public JavascriptPartType getJavascriptType()
+    public String renderFunction()
     {
-        return JavascriptPartType.Javascript;
+        return "";
     }
-
 }
