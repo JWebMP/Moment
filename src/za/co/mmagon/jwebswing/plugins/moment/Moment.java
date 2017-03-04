@@ -1,4 +1,4 @@
-/*
+/* 
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -23,6 +23,7 @@ import za.co.mmagon.jwebswing.base.angular.AngularPageConfigurator;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
+import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 
 /**
  * The Moment.js implementation
@@ -32,6 +33,9 @@ import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
  * @since 29 Aug 2015
  * @version 1.0
  */
+@ComponentInformation(name = "Moment.js",
+                      description = "Parse, validate, manipulate, and display dates in JavaScript.",
+                      url = "https://github.com/urish/angular-moment")
 public class Moment<J extends Moment>
         extends Div<MomentChildren, MomentAttributes, MomentFeatures, MomentEvents, J> implements GlobalChildren
 {
@@ -70,7 +74,7 @@ public class Moment<J extends Moment>
      * Constructs a new moment with the given date and tag type
      *
      * @param assignedDate The date to use
-     * @param myComponent THe component tag to use
+     * @param myComponent  THe component tag to use
      */
     public Moment(Date assignedDate, ComponentTypes myComponent)
     {
@@ -85,7 +89,7 @@ public class Moment<J extends Moment>
      * Constructs a new moment with the given angular variable name
      *
      * @param variableName The angular variable name to use
-     * @param myComponent The component type to use
+     * @param myComponent  The component type to use
      */
     public Moment(String variableName, ComponentTypes myComponent)
     {
