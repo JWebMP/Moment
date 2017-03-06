@@ -5,6 +5,7 @@
         <group name="JWebSwing"/>
         <group name="JWebSwing Plugins">
             <file>file:/C:/AESoft/Programs/JWebSwingPlugins/MomentPlugin/src/za/co/mmagon/jwebswing/plugins/moment/Moment.java</file>
+            <file>file:/C:/AESoft/Programs/JWebSwingPlugins/MomentPlugin/src/za/co/mmagon/jwebswing/plugins/moment/MomentPageConfigurator.java</file>
         </group>
     </open-files>
 </project-private>
