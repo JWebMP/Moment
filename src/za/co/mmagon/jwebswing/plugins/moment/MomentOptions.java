@@ -17,7 +17,6 @@
 package za.co.mmagon.jwebswing.plugins.moment;
 
 import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
 
 /**
  * All the options for the tooltip library
@@ -28,18 +27,14 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavascriptPartType;
  * <p>
  * <p>
  */
-public class MomentOptions extends JavaScriptPart
+class MomentOptions extends JavaScriptPart
 {
+
+    private static final long serialVersionUID = 1L;
 
     public MomentOptions()
     {
 
-    }
-
-    @Override
-    public JavascriptPartType getJavascriptType()
-    {
-        return JavascriptPartType.Javascript;
     }
 
 }

@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,13 +20,13 @@ import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 
 /**
  * Specifies the am time ago flag for moment accessing
- * 
+ *
  * @author GedMarc
  * 2since 201/10/05
  */
-public enum MomentAttributes implements AttributeDefinitions
+enum MomentAttributes implements AttributeDefinitions
 {
-    
+
     am_time_ago;
 
     private MomentAttributes()

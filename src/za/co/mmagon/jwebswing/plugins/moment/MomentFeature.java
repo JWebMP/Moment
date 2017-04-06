@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -27,7 +27,7 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
  * @since 2013/01/16
  * @version 1.0
  */
-public class MomentFeature extends Feature<MomentOptions, MomentFeature> implements MomentFeatures, GlobalFeatures
+class MomentFeature extends Feature<MomentOptions, MomentFeature> implements MomentFeatures, GlobalFeatures
 {
 
     private static final long serialVersionUID = 1L;

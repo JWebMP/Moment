@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -32,11 +32,16 @@ public class MomentAngularModule extends AngularModuleBase
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * Constructs a new angular module
+     *
+     * @param component
+     */
     public MomentAngularModule(ComponentHierarchyBase component)
     {
         super("angularMoment");
-        component.getJavascriptReferences().add(MomentReferencePool.MomentReference.getJavaScriptReference());
-        component.getJavascriptReferences().add(MomentReferencePool.MomentAngularReference.getJavaScriptReference());
+        //component.getJavascriptReferences().add(MomentReferencePool.MomentReference.getJavaScriptReference());
+        //component.getJavascriptReferences().add(MomentReferencePool.MomentAngularReference.getJavaScriptReference());
     }
 
     @Override

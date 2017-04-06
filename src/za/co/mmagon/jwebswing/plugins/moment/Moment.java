@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -47,6 +47,15 @@ public class Moment<J extends Moment>
      */
     private final SimpleDateFormat DateFormatter;
 
+    private final NumberFormat numberFormatter = NumberFormat.getInstance();
+
+
+    {
+        numberFormatter.setGroupingUsed(false);
+        numberFormatter.setMaximumFractionDigits(2);
+        numberFormatter.setMinimumIntegerDigits(2);
+    }
+
     private MomentFeature feature;
     /**
      * The date that this moment is using
@@ -62,12 +71,13 @@ public class Moment<J extends Moment>
     /**
      * Constructs an empty moment component
      */
+    @SuppressWarnings("")
     public Moment()
     {
         this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
         DateFormatter.applyPattern("yyyy-MM-dd HH:mm:ss");
         setAssignedDate(new Date());
-        AngularPageConfigurator.setAngularRequired(this, true);
+        AngularPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -76,13 +86,14 @@ public class Moment<J extends Moment>
      * @param assignedDate The date to use
      * @param myComponent  THe component tag to use
      */
+    @SuppressWarnings("")
     public Moment(Date assignedDate, ComponentTypes myComponent)
     {
         super(myComponent);
         this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
         DateFormatter.applyPattern("yyyy-MM-dd HH:mm:ss");
         this.assignedDate = assignedDate;
-        AngularPageConfigurator.setAngularRequired(this, true);
+        AngularPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -91,13 +102,14 @@ public class Moment<J extends Moment>
      * @param variableName The angular variable name to use
      * @param myComponent  The component type to use
      */
+    @SuppressWarnings("")
     public Moment(String variableName, ComponentTypes myComponent)
     {
         super(myComponent);
         this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
         DateFormatter.applyPattern("yyyy-MM-dd HH:mm:ss");
         this.variableName = variableName;
-        AngularPageConfigurator.setAngularRequired(this, true);
+        AngularPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -105,12 +117,13 @@ public class Moment<J extends Moment>
      *
      * @param assignedDate The date to use
      */
+    @SuppressWarnings("")
     public Moment(Date assignedDate)
     {
         this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
         DateFormatter.applyPattern("yyyy-MM-dd HH:mm:ss");
         this.assignedDate = assignedDate;
-        AngularPageConfigurator.setAngularRequired(this, true);
+        AngularPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -118,12 +131,13 @@ public class Moment<J extends Moment>
      *
      * @param variableName the new angular variable
      */
+    @SuppressWarnings("")
     public Moment(String variableName)
     {
         this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
         DateFormatter.applyPattern("yyyy-MM-dd HH:mm:ss");
         this.variableName = variableName;
-        AngularPageConfigurator.setAngularRequired(this, true);
+        AngularPageConfigurator.setRequired(this, true);
     }
 
     /**
@@ -298,15 +312,6 @@ public class Moment<J extends Moment>
         getAppliedFilters().put(MomentFilters.amUtc, null);
     }
 
-    private static final NumberFormat nf = NumberFormat.getInstance();
-
-    static
-    {
-        nf.setGroupingUsed(false);
-        nf.setMaximumFractionDigits(2);
-        nf.setMinimumIntegerDigits(2);
-    }
-
     /**
      * Uses the given U offset when displaying a date. For example, the following code will display the date with a UTC + 3 hours time offset:
      * <p>
@@ -316,7 +321,7 @@ public class Moment<J extends Moment>
      */
     public void AddUtcOffsetFilter(double timeToChange)
     {
-        String timeSet = "+" + nf.format(timeToChange).replace(".", "");
+        String timeSet = "+" + numberFormatter.format(timeToChange).replace(".", "");
         getAppliedFilters().put(MomentFilters.amUtcOffset, timeSet);
     }
 

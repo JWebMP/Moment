@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,7 +18,9 @@ package za.co.mmagon.jwebswing.plugins.moment;
 
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.PageConfigurator;
+import za.co.mmagon.jwebswing.base.angular.AngularPageConfigurator;
 import za.co.mmagon.jwebswing.plugins.PluginInformation;
+import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
 
 /**
  *
@@ -62,9 +64,9 @@ public class MomentPageConfigurator extends PageConfigurator
             page.getAngular().getAngularModules().add(new MomentAngularModule(page.getBody()));
             page.getBody().getJavascriptReferences().add(MomentReferencePool.MomentReference.getJavaScriptReference());
             page.getBody().getJavascriptReferences().add(MomentReferencePool.MomentAngularReference.getJavaScriptReference());
-        }
-        else
-        {
+
+            JQueryPageConfigurator.setRequired(page.getBody(), true);
+            AngularPageConfigurator.setRequired(page.getBody(), true);
         }
         return page;
     }

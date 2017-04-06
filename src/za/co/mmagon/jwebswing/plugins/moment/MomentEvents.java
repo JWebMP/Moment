@@ -24,7 +24,7 @@ import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
  * @since 07 Aug 2015
  * @version 1.0
  */
-public interface MomentEvents extends GlobalEvents
+interface MomentEvents extends GlobalEvents
 {
 
 }

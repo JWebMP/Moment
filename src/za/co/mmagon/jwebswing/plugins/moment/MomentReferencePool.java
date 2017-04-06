@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2017 Marc Magon
  *
  * This program is free software: you can redistribute it and/or modify
@@ -28,41 +28,73 @@ import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
  */
 public enum MomentReferencePool implements ReferencePool
 {
-    MomentReference(new JavascriptReference("MomentJS", 2.151, "bower_components/moment/min/moment-with-locales.js", "https://cdnjs.com/libraries/moment.js/2.15.1/moment-with-locales.js", 10),null),
-    MomentAngularReference(new JavascriptReference("MomentAngularJS", 0.103, "bower_components/angular-moment/angular-moment.js", "https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.6/angular-moment.min.js", 11),null)
-    ;
+    MomentReference(new JavascriptReference("MomentJS", 2.151, "bower_components/moment/min/moment-with-locales.min.js", "https://cdnjs.com/libraries/moment.js/2.15.1/moment-with-locales.min.js", 10), null),
+    MomentAngularReference(new JavascriptReference("MomentAngularJS", 0.103, "bower_components/angular-moment/angular-moment.min.js", "https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.6/angular-moment.min.js", 11), null);
+
     ;
     private MomentReferencePool()
     {
     }
 
+    /**
+     * The JavaScript Reference
+     */
     private JavascriptReference javaScriptReference;
+    /**
+     * The CSS Reference
+     */
     private CSSReference cssReference;
 
+    /**
+     * The reference pool
+     *
+     * @param javaScriptReference
+     * @param cssReference
+     */
     private MomentReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
     {
         this.javaScriptReference = javaScriptReference;
         this.cssReference = cssReference;
     }
 
+    /**
+     * The JS Reference
+     *
+     * @return
+     */
     @Override
     public JavascriptReference getJavaScriptReference()
     {
         return javaScriptReference;
     }
 
+    /**
+     * Sets the JS Reference
+     *
+     * @param javaScriptReference
+     */
     @Override
     public void setJavaScriptReference(JavascriptReference javaScriptReference)
     {
         this.javaScriptReference = javaScriptReference;
     }
 
+    /**
+     * Sets the CSS Reference
+     *
+     * @return
+     */
     @Override
     public CSSReference getCssReference()
     {
         return cssReference;
     }
 
+    /**
+     * Sets the CSS Reference
+     *
+     * @param cssReference
+     */
     @Override
     public void setCssReference(CSSReference cssReference)
     {
