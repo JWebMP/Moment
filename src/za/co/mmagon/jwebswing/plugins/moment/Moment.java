@@ -18,7 +18,9 @@ package za.co.mmagon.jwebswing.plugins.moment;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import za.co.mmagon.jwebswing.base.angular.AngularPageConfigurator;
 import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
@@ -36,7 +38,7 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 @ComponentInformation(name = "Moment.js",
                       description = "Parse, validate, manipulate, and display dates in JavaScript.",
                       url = "https://github.com/urish/angular-moment")
-public class Moment<J extends Moment>
+public class Moment<J extends Moment<J>>
         extends Div<MomentChildren, MomentAttributes, MomentFeatures, MomentEvents, J> implements GlobalChildren
 {
 
