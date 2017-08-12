@@ -16,141 +16,140 @@
  */
 package za.co.mmagon.jwebswing.plugins.moment;
 
-import za.co.mmagon.jwebswing.plugins.moment.Moment;
-import java.util.Date;
 import org.junit.Assert;
 import org.junit.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 
+import java.util.Date;
+
 /**
- *
  * @author GedMarc
  */
 public class MomentTest extends BaseTestClass
 {
 
-    public MomentTest()
-    {
-    }
+	public MomentTest()
+	{
+	}
 
-    @Test
-    public void testGetFeature()
-    {
-        Page p = getInstance();
-        p.getBody().add(new Moment(new Date()));
-        p.getOptions().setDynamicRender(false);
-        p.renderJavascript();
-        System.out.println(p.toString(true));
+	@Test
+	public void testGetFeature()
+	{
+		Page p = getInstance();
+		p.getBody().add(new Moment(new Date()));
+		p.getOptions().setDynamicRender(false);
+		p.renderJavascript();
+		System.out.println(p.toString(true));
 
-        if (!p.toString(true).contains("var jwApp = angular.module('jwApp',['angularMoment']);"))
-        {
-            Assert.fail("didn't put moment module into the angular script");
-        }
-    }
+		if (!p.toString(true).contains("var jwApp = angular.module('jwApp',['angularMoment']);"))
+		{
+			Assert.fail("didn't put moment module into the angular script");
+		}
+	}
 
-    @Test
-    public void testJavascript()
-    {
-        Page p = getInstance();
-        p.getBody().add(new Moment(new Date()));
-        p.getOptions().setDynamicRender(false);
-        System.out.println(p.renderJavascript());
-    }
+	@Test
+	public void testJavascript()
+	{
+		Page p = getInstance();
+		p.getBody().add(new Moment(new Date()));
+		p.getOptions().setDynamicRender(false);
+		System.out.println(p.renderJavascript());
+	}
 
-    @Test
-    public void testGetAssignedDate()
-    {
-    }
+	@Test
+	public void testGetAssignedDate()
+	{
+	}
 
-    @Test
-    public void testSetAssignedDate()
-    {
-    }
+	@Test
+	public void testSetAssignedDate()
+	{
+	}
 
-    @Test
-    public void testGetVariableName()
-    {
-    }
+	@Test
+	public void testGetVariableName()
+	{
+	}
 
-    @Test
-    public void testSetVariableName()
-    {
-    }
+	@Test
+	public void testSetVariableName()
+	{
+	}
 
-    @Test
-    public void testGetAppliedFilters()
-    {
-    }
+	@Test
+	public void testGetAppliedFilters()
+	{
+	}
 
-    @Test
-    public void testSetAppliedFilters()
-    {
-    }
+	@Test
+	public void testSetAppliedFilters()
+	{
+	}
 
-    @Test
-    public void testPreConfigure()
-    {
-    }
+	@Test
+	public void testPreConfigure()
+	{
+	}
 
-    @Test
-    public void testAddParseFilter()
-    {
-    }
+	@Test
+	public void testAddParseFilter()
+	{
+	}
 
-    @Test
-    public void testAddFromUnixFilter()
-    {
-    }
+	@Test
+	public void testAddFromUnixFilter()
+	{
+	}
 
-    @Test
-    public void testAddUtc()
-    {
-    }
+	@Test
+	public void testAddUtc()
+	{
+	}
 
-    @Test
-    public void testAddUtcOffsetFilter()
-    {
-    }
+	@Test
+	public void testAddUtcOffsetFilter()
+	{
+	}
 
-    @Test
-    public void testAddLocalFilter()
-    {
-    }
+	@Test
+	public void testAddLocalFilter()
+	{
+	}
 
-    @Test
-    public void testAddTimezoneFilter()
-    {
-    }
+	@Test
+	public void testAddTimezoneFilter()
+	{
+	}
 
-    @Test
-    public void testAddDateFormatFilter()
-    {
-    }
+	@Test
+	public void testAddDateFormatFilter()
+	{
+	}
 
-    @Test
-    public void testAddCalendarFilter()
-    {
-    }
+	@Test
+	public void testAddCalendarFilter()
+	{
+	}
 
-    @Test
-    public void testAddDifferenceFilter()
-    {
-    }
+	@Test
+	public void testAddDifferenceFilter()
+	{
+	}
 
-    @Test
-    public void testAddDurationFilter()
-    {
-    }
+	@Test
+	public void testAddDurationFilter()
+	{
+	}
 
-    @Test
-    public void testAddSubtractionFilter()
-    {
-    }
+	@Test
+	public void testAddSubtractionFilter()
+	{
+	}
 
-    @Test
-    public void testAddAdditionFilter()
-    {
-    }
+	@Test
+	public void testAddAdditionFilter()
+	{
+	}
 
 }

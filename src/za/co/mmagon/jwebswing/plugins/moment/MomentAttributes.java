@@ -27,28 +27,28 @@ import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
 enum MomentAttributes implements AttributeDefinitions
 {
 
-    am_time_ago;
+	am_time_ago;
 
-    private MomentAttributes()
-    {
-    }
+	private boolean isKeyword;
 
-    private MomentAttributes(boolean isKeyword)
-    {
-        this.isKeyword = isKeyword;
-    }
+	private MomentAttributes()
+	{
+	}
 
-    private boolean isKeyword;
+	private MomentAttributes(boolean isKeyword)
+	{
+		this.isKeyword = isKeyword;
+	}
 
-    @Override
-    public boolean isKeyword()
-    {
-        return isKeyword;
-    }
+	@Override
+	public boolean isKeyword()
+	{
+		return isKeyword;
+	}
 
-    @Override
-    public String toString()
-    {
-        return name().toLowerCase().replace('_', '-');
-    }
+	@Override
+	public String toString()
+	{
+		return name().toLowerCase().replace('_', '-');
+	}
 }

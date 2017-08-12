@@ -24,27 +24,26 @@ import za.co.mmagon.jwebswing.base.html.Body;
 import za.co.mmagon.jwebswing.plugins.moment.Moment;
 
 /**
- *
  * @author GedMarc
  */
 public class AngularModuleBaseTest extends BaseTestClass
 {
-
-    public AngularModuleBaseTest()
-    {
-    }
-
-    @Test
-    public void testModuleBase()
-    {
-        Page p = getPage();
-        Body b = p.getBody();
-        b.add(new Moment());
-        AngularModuleBase comp = new JWAngularModule(p);
-        System.out.println(comp.toString());
-        Assert.assertEquals("var jwApp = angular.module('jwApp',['angularMoment']);", comp.toString());
-
-        System.out.println(p.toString(true));
-
-    }
+	
+	public AngularModuleBaseTest()
+	{
+	}
+	
+	@Test
+	public void testModuleBase()
+	{
+		Page p = getPage();
+		Body b = p.getBody();
+		b.add(new Moment());
+		AngularModuleBase comp = new JWAngularModule(p);
+		System.out.println(comp.toString());
+		Assert.assertEquals("var jwApp = angular.module('jwApp',['angularMoment']);", comp.toString());
+		
+		System.out.println(p.toString(true));
+		
+	}
 }

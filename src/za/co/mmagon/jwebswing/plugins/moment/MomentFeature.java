@@ -24,50 +24,52 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents
  *
  * @author MMagon
- * @since 2013/01/16
  * @version 1.0
+ * @since 2013/01/16
  */
 class MomentFeature extends Feature<MomentOptions, MomentFeature> implements MomentFeatures, GlobalFeatures
 {
 
-    private static final long serialVersionUID = 1L;
-    private MomentOptions options;
+	private static final long serialVersionUID = 1L;
+	private MomentOptions options;
 
-    /**
-     * Constructs a feature for
-     * <p>
-     * @param forComponent
-     */
-    public MomentFeature(Component forComponent)
-    {
-        super("MomentJS");
-        setComponent(forComponent);
+	/**
+	 * Constructs a feature for
+	 * <p>
+	 *
+	 * @param forComponent
+	 */
+	public MomentFeature(Component forComponent)
+	{
+		super("MomentJS");
+		setComponent(forComponent);
 
-    }
+	}
 
-    @Override
-    public void preConfigure()
-    {
-        super.preConfigure();
-    }
+	@Override
+	public void preConfigure()
+	{
+		super.preConfigure();
+	}
 
-    /**
-     * No Options
-     * <p>
-     * @return
-     */
-    @Override
-    public MomentOptions getOptions()
-    {
-        if (options == null)
-        {
-            options = new MomentOptions();
-        }
-        return options;
-    }
+	/**
+	 * No Options
+	 * <p>
+	 *
+	 * @return
+	 */
+	@Override
+	public MomentOptions getOptions()
+	{
+		if (options == null)
+		{
+			options = new MomentOptions();
+		}
+		return options;
+	}
 
-    @Override
-    public void assignFunctionsToComponent()
-    {
-    }
+	@Override
+	public void assignFunctionsToComponent()
+	{
+	}
 }

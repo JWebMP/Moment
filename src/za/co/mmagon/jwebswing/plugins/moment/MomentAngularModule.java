@@ -23,30 +23,29 @@ import za.co.mmagon.jwebswing.base.angular.modules.AngularModuleBase;
  * Registers the moment angular module as available for the
  *
  * @author GedMarc
- * @since Oct 4, 2016
  * @version 1.0
- *
+ * @since Oct 4, 2016
  */
 public class MomentAngularModule extends AngularModuleBase
 {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * Constructs a new angular module
-     *
-     * @param component
-     */
-    public MomentAngularModule(ComponentHierarchyBase component)
-    {
-        super("angularMoment");
-        //component.getJavascriptReferences().add(MomentReferencePool.MomentReference.getJavaScriptReference());
-        //component.getJavascriptReferences().add(MomentReferencePool.MomentAngularReference.getJavaScriptReference());
-    }
+	/**
+	 * Constructs a new angular module
+	 *
+	 * @param component
+	 */
+	public MomentAngularModule(ComponentHierarchyBase component)
+	{
+		super("angularMoment");
+		//component.getJavascriptReferences().add(MomentReferencePool.MomentReference.getJavaScriptReference());
+		//component.getJavascriptReferences().add(MomentReferencePool.MomentAngularReference.getJavaScriptReference());
+	}
 
-    @Override
-    public String renderFunction()
-    {
-        return "";
-    }
+	@Override
+	public String renderFunction()
+	{
+		return "";
+	}
 }
