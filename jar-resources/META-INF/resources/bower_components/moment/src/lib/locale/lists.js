@@ -2,7 +2,7 @@ import isNumber from '../utils/is-number';
 import {getLocale} from './locales';
 import {createUTC} from '../create/utc';
 
-function get (format, index, field, setter) {
+function get(format, index, field, setter) {
     var locale = getLocale();
     var utc = createUTC().set(setter, index);
     return locale[field](utc, format);

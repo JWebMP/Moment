@@ -16,12 +16,12 @@ export function makeGetSet(unit, keepTime) {
     };
 }
 
-export function get (mom, unit) {
+export function get(mom, unit) {
     return mom.isValid() ?
         mom._d['get' + (mom._isUTC ? 'UTC' : '') + unit]() : NaN;
 }
 
-export function set (mom, unit, value) {
+export function set(mom, unit, value) {
     if (mom.isValid()) {
         mom._d['set' + (mom._isUTC ? 'UTC' : '') + unit](value);
     }

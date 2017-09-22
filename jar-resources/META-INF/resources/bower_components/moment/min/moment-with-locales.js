@@ -338,7 +338,7 @@
         return input instanceof Function || Object.prototype.toString.call(input) === '[object Function]';
     }
 
-    function set (config) {
+    function set(config) {
         var prop, i;
         for (i in config) {
             prop = config[i];
@@ -544,7 +544,7 @@
         };
     }
 
-    function get (mom, unit) {
+    function get(mom, unit) {
         return mom.isValid() ?
             mom._d['get' + (mom._isUTC ? 'UTC' : '') + unit]() : NaN;
     }

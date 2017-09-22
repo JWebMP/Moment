@@ -1,7 +1,7 @@
 import {normalizeUnits} from '../units/aliases';
 import absFloor from '../utils/abs-floor';
 
-export function get (units) {
+export function get(units) {
     units = normalizeUnits(units);
     return this.isValid() ? this[units + 's']() : NaN;
 }

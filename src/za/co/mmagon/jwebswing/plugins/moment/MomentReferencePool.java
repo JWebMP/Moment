@@ -29,8 +29,8 @@ import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
 public enum MomentReferencePool implements ReferencePool
 {
 	MomentReference(new JavascriptReference("MomentJS", 2.151, "bower_components/moment/min/moment-with-locales.min.js", "https://cdnjs.com/libraries/moment.js/2.15.1/moment-with-locales.min.js", 10), null),
-	MomentAngularReference(new JavascriptReference("MomentAngularJS", 0.103, "bower_components/angular-moment/angular-moment.min.js", "https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.6/angular-moment.min.js", 11), null);;
-
+	MomentAngularReference(new JavascriptReference("MomentAngularJS", 0.103, "bower_components/angular-moment/angular-moment.min.js", "https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.6/angular-moment.min.js", 11), null);
+	
 	/**
 	 * The JavaScript Reference
 	 */
@@ -39,7 +39,8 @@ public enum MomentReferencePool implements ReferencePool
 	 * The CSS Reference
 	 */
 	private CSSReference cssReference;
-	private MomentReferencePool()
+	
+	MomentReferencePool()
 	{
 	}
 
@@ -49,7 +50,7 @@ public enum MomentReferencePool implements ReferencePool
 	 * @param javaScriptReference
 	 * @param cssReference
 	 */
-	private MomentReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
+	MomentReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
 	{
 		this.javaScriptReference = javaScriptReference;
 		this.cssReference = cssReference;
