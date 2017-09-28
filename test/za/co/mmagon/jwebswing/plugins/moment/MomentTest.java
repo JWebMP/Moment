@@ -16,8 +16,8 @@
  */
 package za.co.mmagon.jwebswing.plugins.moment;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 
@@ -44,7 +44,7 @@ public class MomentTest extends BaseTestClass
 
 		if (!p.toString(true).contains("var jwApp = angular.module('jwApp',['angularMoment']);"))
 		{
-			Assert.fail("didn't put moment module into the angular script");
+			Assertions.fail("didn't put moment module into the angular script");
 		}
 	}
 

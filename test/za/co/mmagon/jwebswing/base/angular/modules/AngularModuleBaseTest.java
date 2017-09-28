@@ -16,8 +16,8 @@
  */
 package za.co.mmagon.jwebswing.base.angular.modules;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 import za.co.mmagon.jwebswing.base.html.Body;
@@ -41,7 +41,7 @@ public class AngularModuleBaseTest extends BaseTestClass
 		b.add(new Moment());
 		AngularModuleBase comp = new JWAngularModule(p);
 		System.out.println(comp.toString());
-		Assert.assertEquals("var jwApp = angular.module('jwApp',['angularMoment']);", comp.toString());
+		Assertions.assertEquals("var jwApp = angular.module('jwApp',['angularMoment']);", comp.toString());
 		
 		System.out.println(p.toString(true));
 		
