@@ -18,7 +18,7 @@ package za.co.mmagon.jwebswing.plugins.moment;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import za.co.mmagon.BaseTestClass;
+import za.co.mmagon.jwebswing.BaseTestClass;
 import za.co.mmagon.jwebswing.Page;
 
 import java.util.Date;
