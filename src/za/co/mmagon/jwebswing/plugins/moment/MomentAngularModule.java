@@ -39,8 +39,6 @@ public class MomentAngularModule extends AngularModuleBase
 	public MomentAngularModule(ComponentHierarchyBase component)
 	{
 		super("angularMoment");
-		//component.getJavascriptReferences().add(MomentReferencePool.MomentReference.getJavaScriptReference());
-		//component.getJavascriptReferences().add(MomentReferencePool.MomentAngularReference.getJavaScriptReference());
 	}
 
 	@Override

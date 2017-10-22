@@ -22,28 +22,22 @@ import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
  * Specifies the am time ago flag for moment accessing
  *
  * @author GedMarc
- * 2since 201/10/05
+ * 		2since 201/10/05
  */
 enum MomentAttributes implements AttributeDefinitions
 {
 
 	am_time_ago;
 
-	private boolean isKeyword;
-
-	private MomentAttributes()
+	MomentAttributes()
 	{
 	}
 
-	private MomentAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
 
 	@Override
 	public boolean isKeyword()
 	{
-		return isKeyword;
+		return false;
 	}
 
 	@Override

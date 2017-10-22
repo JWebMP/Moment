@@ -46,12 +46,6 @@ class MomentFeature extends Feature<MomentOptions, MomentFeature> implements Mom
 
 	}
 
-	@Override
-	public void preConfigure()
-	{
-		super.preConfigure();
-	}
-
 	/**
 	 * No Options
 	 * <p>
@@ -71,5 +65,36 @@ class MomentFeature extends Feature<MomentOptions, MomentFeature> implements Mom
 	@Override
 	public void assignFunctionsToComponent()
 	{
+
+		//Nothing Needed
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!(o instanceof MomentFeature))
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		MomentFeature that = (MomentFeature) o;
+
+		return getOptions().equals(that.getOptions());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
 	}
 }

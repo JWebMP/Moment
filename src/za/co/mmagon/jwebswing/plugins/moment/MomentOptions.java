@@ -24,8 +24,8 @@ import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
  *
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 4, 2015
  */
 class MomentOptions extends JavaScriptPart
@@ -35,7 +35,7 @@ class MomentOptions extends JavaScriptPart
 
 	public MomentOptions()
 	{
-
+		//Nothing Needed
 	}
 
 }
