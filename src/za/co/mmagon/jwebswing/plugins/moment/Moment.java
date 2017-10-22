@@ -63,7 +63,6 @@ public class Moment<J extends Moment<J>>
 	 */
 	private String variableName;
 	private Map<MomentFilters, String> appliedFilters;
-
 	{
 		numberFormatter.setGroupingUsed(false);
 		numberFormatter.setMaximumFractionDigits(2);
@@ -85,8 +84,10 @@ public class Moment<J extends Moment<J>>
 	/**
 	 * Constructs a new moment with the given date and tag type
 	 *
-	 * @param assignedDate The date to use
-	 * @param myComponent  THe component tag to use
+	 * @param assignedDate
+	 * 		The date to use
+	 * @param myComponent
+	 * 		THe component tag to use
 	 */
 	@SuppressWarnings("")
 	public Moment(Date assignedDate, ComponentTypes myComponent)
@@ -101,8 +102,10 @@ public class Moment<J extends Moment<J>>
 	/**
 	 * Constructs a new moment with the given angular variable name
 	 *
-	 * @param variableName The angular variable name to use
-	 * @param myComponent  The component type to use
+	 * @param variableName
+	 * 		The angular variable name to use
+	 * @param myComponent
+	 * 		The component type to use
 	 */
 	@SuppressWarnings("")
 	public Moment(String variableName, ComponentTypes myComponent)
@@ -117,7 +120,8 @@ public class Moment<J extends Moment<J>>
 	/**
 	 * Constructs a new DIV with the given date
 	 *
-	 * @param assignedDate The date to use
+	 * @param assignedDate
+	 * 		The date to use
 	 */
 	@SuppressWarnings("")
 	public Moment(Date assignedDate)
@@ -131,7 +135,8 @@ public class Moment<J extends Moment<J>>
 	/**
 	 * Constructs a new DIV with the given angular variable
 	 *
-	 * @param variableName the new angular variable
+	 * @param variableName
+	 * 		the new angular variable
 	 */
 	@SuppressWarnings("")
 	public Moment(String variableName)
@@ -261,20 +266,17 @@ public class Moment<J extends Moment<J>>
 		}
 		if (!getAppliedFilters().isEmpty())
 		{
-			getAppliedFilters().entrySet().stream().forEach((entry)
-					                                                ->
-			                                                {
-				                                                MomentFilters key = entry.getKey();
-				                                                String value = entry.getValue();
-				                                                if (value != null)
-				                                                {
-					                                                sb.append(" | ").append(key).append(" : '").append(value).append("'");
-				                                                }
-				                                                else
-				                                                {
-					                                                sb.append(" | ").append(key);
-				                                                }
-			                                                });
+			getAppliedFilters().forEach((key, value) ->
+			                            {
+				                            if (value != null)
+				                            {
+					                            sb.append(" | ").append(key).append(" : '").append(value).append("'");
+				                            }
+				                            else
+				                            {
+					                            sb.append(" | ").append(key);
+				                            }
+			                            });
 		}
 		return sb.toString();
 	}
@@ -319,7 +321,8 @@ public class Moment<J extends Moment<J>>
 	 * <p>
 	 * {{message.date | amUtcOffset:'+0300' | amDateFormat:'MM.DD.YYYY HH:mm:ss'}}/span
 	 *
-	 * @param timeToChange the time to change, use like 3.0, or 3.30
+	 * @param timeToChange
+	 * 		the time to change, use like 3.0, or 3.30
 	 */
 	public void AddUtcOffsetFilter(double timeToChange)
 	{
