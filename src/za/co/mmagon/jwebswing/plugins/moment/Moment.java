@@ -28,6 +28,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_SINGLE_QUOTES;
+
 /**
  * The Moment.js implementation
  * <p>
@@ -261,7 +263,7 @@ public class Moment<J extends Moment<J>>
 		}
 		else if (assignedDate != null)
 		{
-			sb.append("'").append(DateFormatter.format(assignedDate)).append("'");
+			sb.append(STRING_SINGLE_QUOTES).append(DateFormatter.format(assignedDate)).append(STRING_SINGLE_QUOTES);
 			getAppliedFilters().put(MomentFilters.amParse, "YYYY-MM-DD HH:mm:ss");
 		}
 		if (!getAppliedFilters().isEmpty())
@@ -270,7 +272,7 @@ public class Moment<J extends Moment<J>>
 			                            {
 				                            if (value != null)
 				                            {
-					                            sb.append(" | ").append(key).append(" : '").append(value).append("'");
+					                            sb.append(" | ").append(key).append(" : '").append(value).append(STRING_SINGLE_QUOTES);
 				                            }
 				                            else
 				                            {
