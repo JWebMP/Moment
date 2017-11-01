@@ -25,9 +25,10 @@ import za.co.mmagon.jwebswing.plugins.ComponentInformation;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.DEFAULT_DATE_TIME_PATTERN;
 import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_SINGLE_QUOTES;
 
 /**
@@ -64,12 +65,9 @@ public class Moment<J extends Moment<J>>
 	 * The variable name if this moment is bound
 	 */
 	private String variableName;
+
+
 	private Map<MomentFilters, String> appliedFilters;
-	{
-		numberFormatter.setGroupingUsed(false);
-		numberFormatter.setMaximumFractionDigits(2);
-		numberFormatter.setMinimumIntegerDigits(2);
-	}
 
 	/**
 	 * Constructs an empty moment component
@@ -78,7 +76,10 @@ public class Moment<J extends Moment<J>>
 	public Moment()
 	{
 		this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
-		DateFormatter.applyPattern("yyyy-MM-dd HH:mm:ss");
+		numberFormatter.setGroupingUsed(false);
+		numberFormatter.setMaximumFractionDigits(2);
+		numberFormatter.setMinimumIntegerDigits(2);
+		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		setAssignedDate(new Date());
 		AngularPageConfigurator.setRequired(this, true);
 	}
@@ -96,7 +97,7 @@ public class Moment<J extends Moment<J>>
 	{
 		super(myComponent);
 		this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
-		DateFormatter.applyPattern("yyyy-MM-dd HH:mm:ss");
+		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.assignedDate = assignedDate;
 		AngularPageConfigurator.setRequired(this, true);
 	}
@@ -114,7 +115,7 @@ public class Moment<J extends Moment<J>>
 	{
 		super(myComponent);
 		this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
-		DateFormatter.applyPattern("yyyy-MM-dd HH:mm:ss");
+		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.variableName = variableName;
 		AngularPageConfigurator.setRequired(this, true);
 	}
@@ -129,7 +130,7 @@ public class Moment<J extends Moment<J>>
 	public Moment(Date assignedDate)
 	{
 		this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
-		DateFormatter.applyPattern("yyyy-MM-dd HH:mm:ss");
+		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.assignedDate = assignedDate;
 		AngularPageConfigurator.setRequired(this, true);
 	}
@@ -144,7 +145,7 @@ public class Moment<J extends Moment<J>>
 	public Moment(String variableName)
 	{
 		this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
-		DateFormatter.applyPattern("yyyy-MM-dd HH:mm:ss");
+		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.variableName = variableName;
 		AngularPageConfigurator.setRequired(this, true);
 	}
@@ -223,7 +224,7 @@ public class Moment<J extends Moment<J>>
 	{
 		if (appliedFilters == null)
 		{
-			appliedFilters = new HashMap<>();
+			appliedFilters = new EnumMap<>(MomentFilters.class);
 		}
 		return appliedFilters;
 	}
@@ -233,7 +234,7 @@ public class Moment<J extends Moment<J>>
 	 *
 	 * @param appliedFilters
 	 */
-	public void setAppliedFilters(HashMap<MomentFilters, String> appliedFilters)
+	public void setAppliedFilters(Map<MomentFilters, String> appliedFilters)
 	{
 		this.appliedFilters = appliedFilters;
 	}
@@ -344,11 +345,11 @@ public class Moment<J extends Moment<J>>
 	}
 
 	/**
-	 * TODO this guy needs to get done https://github.com/urish/angular-moment
+	 * this guy needs to get done https://github.com/urish/angular-moment
 	 */
 	public void AddTimezoneFilter()
 	{
-
+		//Must Be Done
 	}
 
 	/**
@@ -378,7 +379,7 @@ public class Moment<J extends Moment<J>>
 	}
 
 	/**
-	 * TODO this guy... ;/ https://github.com/urish/angular-moment
+	 * this guy... ;/ https://github.com/urish/angular-moment
 	 */
 	public void AddDifferenceFilter()
 	{
@@ -410,7 +411,7 @@ public class Moment<J extends Moment<J>>
 	 */
 	public void AddSubtractionFilter(int amount, DurationFilters part)
 	{
-		getAppliedFilters().put(MomentFilters.amSubtract, "" + amount + "' : '" + part.toString() + "");
+		getAppliedFilters().put(MomentFilters.amSubtract, Integer.toString(amount) + "' : '" + part.toString() + "");
 	}
 
 	/**
@@ -421,7 +422,7 @@ public class Moment<J extends Moment<J>>
 	 */
 	public void AddAdditionFilter(int amount, DurationFilters part)
 	{
-		getAppliedFilters().put(MomentFilters.amAdd, "" + amount + "' : '" + part.toString() + "");
+		getAppliedFilters().put(MomentFilters.amAdd, Integer.toString(amount) + "' : '" + part.toString() + "");
 	}
 
 	/**
@@ -441,5 +442,59 @@ public class Moment<J extends Moment<J>>
 		{
 			return name().toLowerCase();
 		}
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (o == null || getClass() != o.getClass())
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		Moment<?> moment = (Moment<?>) o;
+
+		if (!DateFormatter.equals(moment.DateFormatter))
+		{
+			return false;
+		}
+		if (!numberFormatter.equals(moment.numberFormatter))
+		{
+			return false;
+		}
+		if (!getFeature().equals(moment.getFeature()))
+		{
+			return false;
+		}
+		if (!getAssignedDate().equals(moment.getAssignedDate()))
+		{
+			return false;
+		}
+		if (getVariableName() != null ? !getVariableName().equals(moment.getVariableName()) : moment.getVariableName() != null)
+		{
+			return false;
+		}
+		return getAppliedFilters().equals(moment.getAppliedFilters());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + DateFormatter.hashCode();
+		result = 31 * result + numberFormatter.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		result = 31 * result + getAssignedDate().hashCode();
+		result = 31 * result + (getVariableName() != null ? getVariableName().hashCode() : 0);
+		result = 31 * result + getAppliedFilters().hashCode();
+		return result;
 	}
 }

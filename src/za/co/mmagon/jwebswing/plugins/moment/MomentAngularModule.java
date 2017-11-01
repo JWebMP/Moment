@@ -16,7 +16,6 @@
  */
 package za.co.mmagon.jwebswing.plugins.moment;
 
-import za.co.mmagon.jwebswing.base.ComponentHierarchyBase;
 import za.co.mmagon.jwebswing.base.angular.modules.AngularModuleBase;
 
 /**
@@ -34,9 +33,8 @@ public class MomentAngularModule extends AngularModuleBase
 	/**
 	 * Constructs a new angular module
 	 *
-	 * @param component
 	 */
-	public MomentAngularModule(ComponentHierarchyBase component)
+	public MomentAngularModule()
 	{
 		super("angularMoment");
 	}

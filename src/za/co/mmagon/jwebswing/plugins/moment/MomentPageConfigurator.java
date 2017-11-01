@@ -59,7 +59,7 @@ public class MomentPageConfigurator extends PageConfigurator
 	{
 		if (!page.isConfigured())
 		{
-			page.getAngular().getAngularModules().add(new MomentAngularModule(page.getBody()));
+			page.getAngular().getAngularModules().add(new MomentAngularModule());
 			page.getBody().getJavascriptReferences().add(MomentReferencePool.MomentReference.getJavaScriptReference());
 			page.getBody().getJavascriptReferences().add(MomentReferencePool.MomentAngularReference.getJavaScriptReference());
 
