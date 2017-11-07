@@ -21,6 +21,7 @@ import za.co.mmagon.jwebswing.base.html.Div;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
 import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
 import za.co.mmagon.jwebswing.plugins.ComponentInformation;
+import za.co.mmagon.jwebswing.utilities.StaticStrings;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -329,7 +330,7 @@ public class Moment<J extends Moment<J>>
 	 */
 	public void AddUtcOffsetFilter(double timeToChange)
 	{
-		String timeSet = "+" + numberFormatter.format(timeToChange).replace(".", "");
+		String timeSet = "+" + numberFormatter.format(timeToChange).replace(StaticStrings.STRING_DOT, "");
 		getAppliedFilters().put(MomentFilters.amUtcOffset, timeSet);
 	}
 
