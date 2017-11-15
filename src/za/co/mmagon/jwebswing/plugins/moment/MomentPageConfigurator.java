@@ -55,6 +55,7 @@ public class MomentPageConfigurator extends PageConfigurator
 	}
 
 	@Override
+	@SuppressWarnings("unchecked")
 	public Page configure(Page page)
 	{
 		if (!page.isConfigured())

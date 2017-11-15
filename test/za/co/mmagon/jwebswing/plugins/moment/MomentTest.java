@@ -34,6 +34,7 @@ public class MomentTest extends BaseTestClass
 	}
 
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testGetFeature()
 	{
 		Page p = getInstance();
@@ -49,6 +50,7 @@ public class MomentTest extends BaseTestClass
 	}
 
 	@Test
+	@SuppressWarnings("unchecked")
 	public void testJavascript()
 	{
 		Page p = getInstance();
