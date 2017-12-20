@@ -489,13 +489,6 @@ public class Moment<J extends Moment<J>>
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + DateFormatter.hashCode();
-		result = 31 * result + numberFormatter.hashCode();
-		result = 31 * result + getFeature().hashCode();
-		result = 31 * result + getAssignedDate().hashCode();
-		result = 31 * result + (getVariableName() != null ? getVariableName().hashCode() : 0);
-		result = 31 * result + getAppliedFilters().hashCode();
-		return result;
+		return super.hashCode();
 	}
 }
