@@ -64,8 +64,8 @@ public class MomentPageConfigurator extends PageConfigurator
 			page.getBody().getJavascriptReferences().add(MomentReferencePool.MomentReference.getJavaScriptReference());
 			page.getBody().getJavascriptReferences().add(MomentReferencePool.MomentAngularReference.getJavaScriptReference());
 
-			JQueryPageConfigurator.setRequired(page.getBody(), true);
-			AngularPageConfigurator.setRequired(page.getBody(), true);
+			JQueryPageConfigurator.setRequired(true);
+			AngularPageConfigurator.setRequired(true);
 		}
 		return page;
 	}

@@ -82,7 +82,7 @@ public class Moment<J extends Moment<J>>
 		numberFormatter.setMinimumIntegerDigits(2);
 		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		setAssignedDate(new Date());
-		AngularPageConfigurator.setRequired(this, true);
+		AngularPageConfigurator.setRequired(true);
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class Moment<J extends Moment<J>>
 		this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
 		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.assignedDate = assignedDate;
-		AngularPageConfigurator.setRequired(this, true);
+		AngularPageConfigurator.setRequired(true);
 	}
 
 	/**
@@ -118,7 +118,7 @@ public class Moment<J extends Moment<J>>
 		this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
 		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.variableName = variableName;
-		AngularPageConfigurator.setRequired(this, true);
+		AngularPageConfigurator.setRequired(true);
 	}
 
 	/**
@@ -133,7 +133,7 @@ public class Moment<J extends Moment<J>>
 		this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
 		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.assignedDate = assignedDate;
-		AngularPageConfigurator.setRequired(this, true);
+		AngularPageConfigurator.setRequired(true);
 	}
 
 	/**
@@ -148,7 +148,7 @@ public class Moment<J extends Moment<J>>
 		this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
 		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.variableName = variableName;
-		AngularPageConfigurator.setRequired(this, true);
+		AngularPageConfigurator.setRequired(true);
 	}
 
 	/**
