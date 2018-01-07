@@ -43,7 +43,7 @@ public class MomentTest extends BaseTestClass
 		p.renderJavascript();
 		System.out.println(p.toString(true));
 
-		if (!p.toString(true).contains("var jwApp = angular.module('jwApp',['angularMoment']);"))
+		if (!p.toString(true).contains("['angularMoment']"))
 		{
 			Assertions.fail("didn't put moment module into the angular script");
 		}
