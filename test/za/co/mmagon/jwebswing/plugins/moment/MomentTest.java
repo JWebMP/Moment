@@ -26,7 +26,8 @@ import java.util.Date;
 /**
  * @author GedMarc
  */
-public class MomentTest extends BaseTestClass
+public class MomentTest
+		extends BaseTestClass
 {
 
 	public MomentTest()
@@ -38,12 +39,15 @@ public class MomentTest extends BaseTestClass
 	public void testGetFeature()
 	{
 		Page p = getInstance();
-		p.getBody().add(new Moment(new Date()));
-		p.getOptions().setDynamicRender(false);
+		p.getBody()
+		 .add(new Moment(new Date()));
+		p.getOptions()
+		 .setDynamicRender(false);
 		p.renderJavascript();
 		System.out.println(p.toString(true));
 
-		if (!p.toString(true).contains("['angularMoment']"))
+		if (!p.toString(true)
+		      .contains("'angularMoment'"))
 		{
 			Assertions.fail("didn't put moment module into the angular script");
 		}
@@ -54,8 +58,10 @@ public class MomentTest extends BaseTestClass
 	public void testJavascript()
 	{
 		Page p = getInstance();
-		p.getBody().add(new Moment(new Date()));
-		p.getOptions().setDynamicRender(false);
+		p.getBody()
+		 .add(new Moment(new Date()));
+		p.getOptions()
+		 .setDynamicRender(false);
 		System.out.println(p.renderJavascript());
 	}
 

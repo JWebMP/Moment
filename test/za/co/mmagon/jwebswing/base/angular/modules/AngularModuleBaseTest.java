@@ -26,13 +26,14 @@ import za.co.mmagon.jwebswing.plugins.moment.Moment;
 /**
  * @author GedMarc
  */
-public class AngularModuleBaseTest extends BaseTestClass
+public class AngularModuleBaseTest
+		extends BaseTestClass
 {
-	
+
 	public AngularModuleBaseTest()
 	{
 	}
-	
+
 	@Test
 	public void testModuleBase()
 	{
@@ -41,9 +42,10 @@ public class AngularModuleBaseTest extends BaseTestClass
 		b.add(new Moment());
 		AngularModuleBase comp = new JWAngularModule(p);
 		System.out.println(comp.toString());
-		Assertions.assertEquals("var jwApp = angular.module('jwApp',['angularMoment']);", comp.toString());
-		
+		Assertions.assertTrue(comp.toString()
+		                          .contains("'angularMoment'"));
+
 		System.out.println(p.toString(true));
-		
+
 	}
 }
