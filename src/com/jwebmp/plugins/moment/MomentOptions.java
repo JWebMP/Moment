@@ -14,16 +14,28 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.moment;
+package com.jwebmp.plugins.moment;
 
-import za.co.mmagon.jwebswing.base.html.interfaces.events.GlobalEvents;
+import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
 
 /**
- * @author Marc Magon
+ * All the options for the tooltip library
+ * <p>
+ *
+ * @author GedMarc
  * @version 1.0
- * @since 07 Aug 2015
+ * 		<p>
+ * 		<p>
+ * @since Mar 4, 2015
  */
-interface MomentEvents extends GlobalEvents
+class MomentOptions extends JavaScriptPart
 {
+
+	private static final long serialVersionUID = 1L;
+
+	public MomentOptions()
+	{
+		//Nothing Needed
+	}
 
 }

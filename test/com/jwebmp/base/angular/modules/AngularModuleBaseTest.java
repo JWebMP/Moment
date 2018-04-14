@@ -14,34 +14,38 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.moment;
+package com.jwebmp.base.angular.modules;
 
-import za.co.mmagon.jwebswing.base.angular.modules.AngularModuleBase;
+import com.jwebmp.BaseTestClass;
+import com.jwebmp.Page;
+import com.jwebmp.base.html.Body;
+import com.jwebmp.plugins.moment.Moment;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
- * Registers the moment angular module as available for the
- *
  * @author GedMarc
- * @version 1.0
- * @since Oct 4, 2016
  */
-public class MomentAngularModule extends AngularModuleBase
+public class AngularModuleBaseTest
+		extends BaseTestClass
 {
 
-	private static final long serialVersionUID = 1L;
-
-	/**
-	 * Constructs a new angular module
-	 *
-	 */
-	public MomentAngularModule()
+	public AngularModuleBaseTest()
 	{
-		super("angularMoment");
 	}
 
-	@Override
-	public String renderFunction()
+	@Test
+	public void testModuleBase()
 	{
-		return "";
+		Page p = getPage();
+		Body b = p.getBody();
+		b.add(new Moment());
+		AngularModuleBase comp = new JWAngularModule(p);
+		System.out.println(comp.toString());
+		Assertions.assertTrue(comp.toString()
+		                          .contains("'angularMoment'"));
+
+		System.out.println(p.toString(true));
+
 	}
 }

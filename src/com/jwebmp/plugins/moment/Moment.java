@@ -14,14 +14,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.moment;
+package com.jwebmp.plugins.moment;
 
-import za.co.mmagon.jwebswing.base.angular.AngularPageConfigurator;
-import za.co.mmagon.jwebswing.base.html.Div;
-import za.co.mmagon.jwebswing.base.html.interfaces.GlobalChildren;
-import za.co.mmagon.jwebswing.base.servlets.enumarations.ComponentTypes;
-import za.co.mmagon.jwebswing.plugins.ComponentInformation;
-import za.co.mmagon.jwebswing.utilities.StaticStrings;
+import com.jwebmp.base.angular.AngularPageConfigurator;
+import com.jwebmp.base.html.Div;
+import com.jwebmp.base.html.interfaces.GlobalChildren;
+import com.jwebmp.base.servlets.enumarations.ComponentTypes;
+import com.jwebmp.plugins.ComponentInformation;
+import com.jwebmp.utilities.StaticStrings;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -29,8 +29,8 @@ import java.util.Date;
 import java.util.EnumMap;
 import java.util.Map;
 
-import static za.co.mmagon.jwebswing.utilities.StaticStrings.DEFAULT_DATE_TIME_PATTERN;
-import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_SINGLE_QUOTES;
+import static com.jwebmp.utilities.StaticStrings.DEFAULT_DATE_TIME_PATTERN;
+import static com.jwebmp.utilities.StaticStrings.STRING_SINGLE_QUOTES;
 
 /**
  * The Moment.js implementation
@@ -46,7 +46,8 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_SINGLE_QUOTE
 		description = "Parse, validate, manipulate, and display dates in JavaScript.",
 		url = "https://github.com/urish/angular-moment")
 public class Moment<J extends Moment<J>>
-		extends Div<MomentChildren, MomentAttributes, MomentFeatures, MomentEvents, J> implements GlobalChildren
+		extends Div<MomentChildren, MomentAttributes, MomentFeatures, MomentEvents, J>
+		implements GlobalChildren
 {
 
 	private static final long serialVersionUID = 1L;
@@ -76,7 +77,7 @@ public class Moment<J extends Moment<J>>
 	@SuppressWarnings("")
 	public Moment()
 	{
-		this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
+		DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
 		numberFormatter.setGroupingUsed(false);
 		numberFormatter.setMaximumFractionDigits(2);
 		numberFormatter.setMinimumIntegerDigits(2);
@@ -97,7 +98,7 @@ public class Moment<J extends Moment<J>>
 	public Moment(Date assignedDate, ComponentTypes myComponent)
 	{
 		super(myComponent);
-		this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
+		DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
 		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.assignedDate = assignedDate;
 		AngularPageConfigurator.setRequired(true);
@@ -115,7 +116,7 @@ public class Moment<J extends Moment<J>>
 	public Moment(String variableName, ComponentTypes myComponent)
 	{
 		super(myComponent);
-		this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
+		DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
 		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.variableName = variableName;
 		AngularPageConfigurator.setRequired(true);
@@ -130,7 +131,7 @@ public class Moment<J extends Moment<J>>
 	@SuppressWarnings("")
 	public Moment(Date assignedDate)
 	{
-		this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
+		DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
 		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.assignedDate = assignedDate;
 		AngularPageConfigurator.setRequired(true);
@@ -145,24 +146,10 @@ public class Moment<J extends Moment<J>>
 	@SuppressWarnings("")
 	public Moment(String variableName)
 	{
-		this.DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
+		DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
 		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.variableName = variableName;
 		AngularPageConfigurator.setRequired(true);
-	}
-
-	/**
-	 * Returns the given feature
-	 *
-	 * @return
-	 */
-	public final MomentFeature getFeature()
-	{
-		if (feature == null)
-		{
-			feature = new MomentFeature(this);
-		}
-		return feature;
 	}
 
 	/**
@@ -177,67 +164,17 @@ public class Moment<J extends Moment<J>>
 	}
 
 	/**
-	 * Returns the assigned date
+	 * Returns the given feature
 	 *
 	 * @return
 	 */
-	public Date getAssignedDate()
+	public final MomentFeature getFeature()
 	{
-		return assignedDate;
-	}
-
-	/**
-	 * Returns the assigned date
-	 *
-	 * @param assignedDate
-	 */
-	public void setAssignedDate(Date assignedDate)
-	{
-		this.assignedDate = assignedDate;
-	}
-
-	/**
-	 * Returns the assigned variable name
-	 *
-	 * @return
-	 */
-	public String getVariableName()
-	{
-		return variableName;
-	}
-
-	/**
-	 * Sets the assigned variable name
-	 *
-	 * @param variableName
-	 */
-	public void setVariableName(String variableName)
-	{
-		this.variableName = variableName;
-	}
-
-	/**
-	 * Return the HashMap of filters applied to this moment
-	 *
-	 * @return
-	 */
-	public Map<MomentFilters, String> getAppliedFilters()
-	{
-		if (appliedFilters == null)
+		if (feature == null)
 		{
-			appliedFilters = new EnumMap<>(MomentFilters.class);
+			feature = new MomentFeature(this);
 		}
-		return appliedFilters;
-	}
-
-	/**
-	 * Sets this moment list of applied filters
-	 *
-	 * @param appliedFilters
-	 */
-	public void setAppliedFilters(Map<MomentFilters, String> appliedFilters)
-	{
-		this.appliedFilters = appliedFilters;
+		return feature;
 	}
 
 	@Override
@@ -265,7 +202,9 @@ public class Moment<J extends Moment<J>>
 		}
 		else if (assignedDate != null)
 		{
-			sb.append(STRING_SINGLE_QUOTES).append(DateFormatter.format(assignedDate)).append(STRING_SINGLE_QUOTES);
+			sb.append(STRING_SINGLE_QUOTES)
+			  .append(DateFormatter.format(assignedDate))
+			  .append(STRING_SINGLE_QUOTES);
 			getAppliedFilters().put(MomentFilters.amParse, "YYYY-MM-DD HH:mm:ss");
 		}
 		if (!getAppliedFilters().isEmpty())
@@ -274,11 +213,16 @@ public class Moment<J extends Moment<J>>
 			                            {
 				                            if (value != null)
 				                            {
-					                            sb.append(" | ").append(key).append(" : '").append(value).append(STRING_SINGLE_QUOTES);
+					                            sb.append(" | ")
+					                              .append(key)
+					                              .append(" : '")
+					                              .append(value)
+					                              .append(STRING_SINGLE_QUOTES);
 				                            }
 				                            else
 				                            {
-					                            sb.append(" | ").append(key);
+					                            sb.append(" | ")
+					                              .append(key);
 				                            }
 			                            });
 		}
@@ -286,7 +230,32 @@ public class Moment<J extends Moment<J>>
 	}
 
 	/**
-	 * Parses a custom-formatted date into a moment object that can be used with the am-time-ago directive and the other filters. For example, the following code will accept dates that are formatted
+	 * Return the HashMap of filters applied to this moment
+	 *
+	 * @return
+	 */
+	public Map<MomentFilters, String> getAppliedFilters()
+	{
+		if (appliedFilters == null)
+		{
+			appliedFilters = new EnumMap<>(MomentFilters.class);
+		}
+		return appliedFilters;
+	}
+
+	/**
+	 * Sets this moment list of applied filters
+	 *
+	 * @param appliedFilters
+	 */
+	public void setAppliedFilters(Map<MomentFilters, String> appliedFilters)
+	{
+		this.appliedFilters = appliedFilters;
+	}
+
+	/**
+	 * Parses a custom-formatted date into a moment object that can be used with the am-time-ago directive and the other filters. For example, the following code will accept dates
+	 * that are formatted
 	 * like "2015.04.25 22:00:15':
 	 * <p>
 	 * am-time-ago="message.time | amParse:'YYYY.MM.DD HH:mm:ss'"
@@ -311,7 +280,8 @@ public class Moment<J extends Moment<J>>
 	}
 
 	/**
-	 * Create / switch the current moment object into UTC mode. For example, given a date object in message.date, the following code will display the time in UTC instead of the local timezone:
+	 * Create / switch the current moment object into UTC mode. For example, given a date object in message.date, the following code will display the time in UTC instead of the
+	 * local timezone:
 	 * <p>
 	 * {{message.date | amUtc | amDateFormat:'MM.DD.YYYY HH:mm:ss'}}
 	 */
@@ -330,12 +300,14 @@ public class Moment<J extends Moment<J>>
 	 */
 	public void AddUtcOffsetFilter(double timeToChange)
 	{
-		String timeSet = "+" + numberFormatter.format(timeToChange).replace(StaticStrings.STRING_DOT, "");
+		String timeSet = "+" + numberFormatter.format(timeToChange)
+		                                      .replace(StaticStrings.STRING_DOT, "");
 		getAppliedFilters().put(MomentFilters.amUtcOffset, timeSet);
 	}
 
 	/**
-	 * Changes the given moment object to be in the local timezone. Usually used in conjunction with amUtc / amTimezone for timezone conversion. For example, the following will convert the given UTC
+	 * Changes the given moment object to be in the local timezone. Usually used in conjunction with amUtc / amTimezone for timezone conversion. For example, the following will
+	 * convert the given UTC
 	 * date to local time:
 	 * <p>
 	 * {{message.date | amUtc | amLocal | amDateFormat:'MM.DD.YYYY HH:mm:ss'}}
@@ -388,7 +360,8 @@ public class Moment<J extends Moment<J>>
 	}
 
 	/**
-	 * Formats a duration (such as 5 days) in a human readable format. See Moment.JS documentation for a list of supported duration formats, and humanize() documentation for explanation about the
+	 * Formats a duration (such as 5 days) in a human readable format. See Moment.JS documentation for a list of supported duration formats, and humanize() documentation for
+	 * explanation about the
 	 * formatting algorithm.
 	 * <p>
 	 * Example:
@@ -424,25 +397,6 @@ public class Moment<J extends Moment<J>>
 	public void AddAdditionFilter(int amount, DurationFilters part)
 	{
 		getAppliedFilters().put(MomentFilters.amAdd, Integer.toString(amount) + "' : '" + part.toString() + "");
-	}
-
-	/**
-	 * The available descernable parts
-	 */
-	public enum DurationFilters
-	{
-		Years,
-		Hours,
-		Minutes,
-		Days,
-		Months,
-		Seconds;
-
-		@Override
-		public String toString()
-		{
-			return name().toLowerCase();
-		}
 	}
 
 	@Override
@@ -490,5 +444,64 @@ public class Moment<J extends Moment<J>>
 	public int hashCode()
 	{
 		return super.hashCode();
+	}
+
+	/**
+	 * Returns the assigned date
+	 *
+	 * @return
+	 */
+	public Date getAssignedDate()
+	{
+		return assignedDate;
+	}
+
+	/**
+	 * Returns the assigned date
+	 *
+	 * @param assignedDate
+	 */
+	public void setAssignedDate(Date assignedDate)
+	{
+		this.assignedDate = assignedDate;
+	}
+
+	/**
+	 * Returns the assigned variable name
+	 *
+	 * @return
+	 */
+	public String getVariableName()
+	{
+		return variableName;
+	}
+
+	/**
+	 * Sets the assigned variable name
+	 *
+	 * @param variableName
+	 */
+	public void setVariableName(String variableName)
+	{
+		this.variableName = variableName;
+	}
+
+	/**
+	 * The available descernable parts
+	 */
+	public enum DurationFilters
+	{
+		Years,
+		Hours,
+		Minutes,
+		Days,
+		Months,
+		Seconds;
+
+		@Override
+		public String toString()
+		{
+			return name().toLowerCase();
+		}
 	}
 }

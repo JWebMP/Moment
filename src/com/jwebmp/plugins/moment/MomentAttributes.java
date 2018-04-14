@@ -14,12 +14,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.moment;
+package com.jwebmp.plugins.moment;
 
-import za.co.mmagon.jwebswing.base.html.interfaces.AttributeDefinitions;
-import za.co.mmagon.jwebswing.utilities.StaticStrings;
+import com.jwebmp.base.html.interfaces.AttributeDefinitions;
+import com.jwebmp.utilities.StaticStrings;
 
-import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
+import static com.jwebmp.utilities.StaticStrings.CHAR_DASH;
 
 /**
  * Specifies the am time ago flag for moment accessing
@@ -27,7 +27,8 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.CHAR_DASH;
  * @author GedMarc
  * 		2since 201/10/05
  */
-enum MomentAttributes implements AttributeDefinitions
+enum MomentAttributes
+		implements AttributeDefinitions
 {
 
 	am_time_ago;
@@ -46,6 +47,7 @@ enum MomentAttributes implements AttributeDefinitions
 	@Override
 	public String toString()
 	{
-		return name().toLowerCase().replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
+		return name().toLowerCase()
+		             .replace(StaticStrings.CHAR_UNDERSCORE, CHAR_DASH);
 	}
 }

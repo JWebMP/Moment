@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.moment;
+package com.jwebmp.plugins.moment;
 
-import za.co.mmagon.jwebswing.Component;
-import za.co.mmagon.jwebswing.Feature;
-import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.Component;
+import com.jwebmp.Feature;
+import com.jwebmp.base.html.interfaces.GlobalFeatures;
 
 /**
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents
@@ -27,7 +27,9 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
  * @version 1.0
  * @since 2013/01/16
  */
-class MomentFeature extends Feature<MomentOptions, MomentFeature> implements MomentFeatures, GlobalFeatures
+class MomentFeature
+		extends Feature<MomentOptions, MomentFeature>
+		implements MomentFeatures, GlobalFeatures
 {
 
 	private static final long serialVersionUID = 1L;
@@ -46,27 +48,12 @@ class MomentFeature extends Feature<MomentOptions, MomentFeature> implements Mom
 
 	}
 
-	/**
-	 * No Options
-	 * <p>
-	 *
-	 * @return
-	 */
 	@Override
-	public MomentOptions getOptions()
+	public int hashCode()
 	{
-		if (options == null)
-		{
-			options = new MomentOptions();
-		}
-		return options;
-	}
-
-	@Override
-	public void assignFunctionsToComponent()
-	{
-
-		//Nothing Needed
+		int result = super.hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
 	}
 
 	@Override
@@ -90,11 +77,26 @@ class MomentFeature extends Feature<MomentOptions, MomentFeature> implements Mom
 		return getOptions().equals(that.getOptions());
 	}
 
+	/**
+	 * No Options
+	 * <p>
+	 *
+	 * @return
+	 */
 	@Override
-	public int hashCode()
+	public MomentOptions getOptions()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		if (options == null)
+		{
+			options = new MomentOptions();
+		}
+		return options;
+	}
+
+	@Override
+	public void assignFunctionsToComponent()
+	{
+
+		//Nothing Needed
 	}
 }

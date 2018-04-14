@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.moment;
+package com.jwebmp.plugins.moment;
 
-import za.co.mmagon.jwebswing.base.references.CSSReference;
-import za.co.mmagon.jwebswing.base.references.JavascriptReference;
-import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
+import com.jwebmp.base.references.CSSReference;
+import com.jwebmp.base.references.JavascriptReference;
+import com.jwebmp.base.servlets.interfaces.ReferencePool;
 
 /**
  * Default reference pool structure
@@ -30,7 +30,7 @@ public enum MomentReferencePool implements ReferencePool
 {
 	MomentReference(new JavascriptReference("MomentJS", 2.151, "bower_components/moment/min/moment-with-locales.min.js", "https://cdnjs.com/libraries/moment.js/2.15.1/moment-with-locales.min.js", 10), null),
 	MomentAngularReference(new JavascriptReference("MomentAngularJS", 0.103, "bower_components/angular-moment/angular-moment.min.js", "https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.6/angular-moment.min.js", 11), null);
-	
+
 	/**
 	 * The JavaScript Reference
 	 */
@@ -39,7 +39,7 @@ public enum MomentReferencePool implements ReferencePool
 	 * The CSS Reference
 	 */
 	private CSSReference cssReference;
-	
+
 	MomentReferencePool()
 	{
 	}
@@ -53,6 +53,28 @@ public enum MomentReferencePool implements ReferencePool
 	MomentReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
 	{
 		this.javaScriptReference = javaScriptReference;
+		this.cssReference = cssReference;
+	}
+
+	/**
+	 * Sets the CSS Reference
+	 *
+	 * @return
+	 */
+	@Override
+	public CSSReference getCssReference()
+	{
+		return cssReference;
+	}
+
+	/**
+	 * Sets the CSS Reference
+	 *
+	 * @param cssReference
+	 */
+	@Override
+	public void setCssReference(CSSReference cssReference)
+	{
 		this.cssReference = cssReference;
 	}
 
@@ -76,27 +98,5 @@ public enum MomentReferencePool implements ReferencePool
 	public void setJavaScriptReference(JavascriptReference javaScriptReference)
 	{
 		this.javaScriptReference = javaScriptReference;
-	}
-
-	/**
-	 * Sets the CSS Reference
-	 *
-	 * @return
-	 */
-	@Override
-	public CSSReference getCssReference()
-	{
-		return cssReference;
-	}
-
-	/**
-	 * Sets the CSS Reference
-	 *
-	 * @param cssReference
-	 */
-	@Override
-	public void setCssReference(CSSReference cssReference)
-	{
-		this.cssReference = cssReference;
 	}
 }

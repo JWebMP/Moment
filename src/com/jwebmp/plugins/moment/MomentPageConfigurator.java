@@ -14,13 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.moment;
+package com.jwebmp.plugins.moment;
 
-import za.co.mmagon.jwebswing.Page;
-import za.co.mmagon.jwebswing.PageConfigurator;
-import za.co.mmagon.jwebswing.base.angular.AngularPageConfigurator;
-import za.co.mmagon.jwebswing.plugins.PluginInformation;
-import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
+import com.jwebmp.Page;
+import com.jwebmp.PageConfigurator;
+import com.jwebmp.base.angular.AngularPageConfigurator;
+import com.jwebmp.plugins.PluginInformation;
+import com.jwebmp.plugins.jquery.JQueryPageConfigurator;
 
 /**
  * @author GedMarc
@@ -28,9 +28,7 @@ import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
  */
 @PluginInformation(pluginName = "Moment.js",
 		pluginUniqueName = "moment-datetime",
-		pluginDescription = "Moment.js provides a wrapper for the native JavaScript date object. In doing this, Moment.js extends the functionality and also accounts for several deficiencies in the object.\n"
-				                    + "<br/>"
-				                    + "Parsing is notably unpredictable with native date. For instance, suppose I am using a computer in the United States, but I have a date in DD/MM/YYYY format.",
+		pluginDescription = "Moment.js provides a wrapper for the native JavaScript date object. In doing this, Moment.js extends the functionality and also accounts for several deficiencies in the object.\n" + "<br/>" + "Parsing is notably unpredictable with native date. For instance, suppose I am using a computer in the United States, but I have a date in DD/MM/YYYY format.",
 		pluginVersion = "2.17.1",
 		pluginDependancyUniqueIDs = "jquery,angular",
 		pluginCategories = "bootstrap,web ui,ui,framework,date picker,date time, moment",
@@ -42,9 +40,9 @@ import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/MomentPlugin.jar/download",
 		pluginIconUrl = "bower_components/moment/moment_icon.png",
 		pluginIconImageUrl = "bower_components/moment/moment_logo.png",
-		pluginLastUpdatedDate = "2017/03/04"
-)
-public class MomentPageConfigurator extends PageConfigurator
+		pluginLastUpdatedDate = "2017/03/04")
+public class MomentPageConfigurator
+		extends PageConfigurator
 {
 
 	private static final long serialVersionUID = 1L;
@@ -60,9 +58,15 @@ public class MomentPageConfigurator extends PageConfigurator
 	{
 		if (!page.isConfigured())
 		{
-			page.getAngular().getAngularModules().add(new MomentAngularModule());
-			page.getBody().getJavascriptReferences().add(MomentReferencePool.MomentReference.getJavaScriptReference());
-			page.getBody().getJavascriptReferences().add(MomentReferencePool.MomentAngularReference.getJavaScriptReference());
+			page.getAngular()
+			    .getAngularModules()
+			    .add(new MomentAngularModule());
+			page.getBody()
+			    .getJavascriptReferences()
+			    .add(MomentReferencePool.MomentReference.getJavaScriptReference());
+			page.getBody()
+			    .getJavascriptReferences()
+			    .add(MomentReferencePool.MomentAngularReference.getJavaScriptReference());
 
 			JQueryPageConfigurator.setRequired(true);
 			AngularPageConfigurator.setRequired(true);
