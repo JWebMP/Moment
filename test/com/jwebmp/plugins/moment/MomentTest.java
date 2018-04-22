@@ -16,7 +16,6 @@
  */
 package com.jwebmp.plugins.moment;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.Page;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -27,7 +26,7 @@ import java.util.Date;
  * @author GedMarc
  */
 public class MomentTest
-		extends BaseTestClass
+
 {
 
 	public MomentTest()
@@ -38,7 +37,7 @@ public class MomentTest
 	@SuppressWarnings("unchecked")
 	public void testGetFeature()
 	{
-		Page p = getInstance();
+		Page p = new Page();
 		p.getBody()
 		 .add(new Moment(new Date()));
 		p.getOptions()
@@ -57,7 +56,7 @@ public class MomentTest
 	@SuppressWarnings("unchecked")
 	public void testJavascript()
 	{
-		Page p = getInstance();
+		Page p = new Page();
 		p.getBody()
 		 .add(new Moment(new Date()));
 		p.getOptions()

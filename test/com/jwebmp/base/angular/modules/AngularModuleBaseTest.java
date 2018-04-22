@@ -16,7 +16,6 @@
  */
 package com.jwebmp.base.angular.modules;
 
-import com.jwebmp.BaseTestClass;
 import com.jwebmp.Page;
 import com.jwebmp.base.html.Body;
 import com.jwebmp.plugins.moment.Moment;
@@ -27,7 +26,7 @@ import org.junit.jupiter.api.Test;
  * @author GedMarc
  */
 public class AngularModuleBaseTest
-		extends BaseTestClass
+
 {
 
 	public AngularModuleBaseTest()
@@ -37,7 +36,7 @@ public class AngularModuleBaseTest
 	@Test
 	public void testModuleBase()
 	{
-		Page p = getPage();
+		Page p = new Page();
 		Body b = p.getBody();
 		b.add(new Moment());
 		AngularModuleBase comp = new JWAngularModule(p);
