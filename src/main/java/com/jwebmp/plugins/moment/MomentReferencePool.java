@@ -26,10 +26,13 @@ import com.jwebmp.base.servlets.interfaces.ReferencePool;
  * @author GedMarc
  * @since 20 Apr 2016
  */
-public enum MomentReferencePool implements ReferencePool
+public enum MomentReferencePool
+		implements ReferencePool
 {
-	MomentReference(new JavascriptReference("MomentJS", 2.151, "bower_components/moment/min/moment-with-locales.min.js", "https://cdnjs.com/libraries/moment.js/2.15.1/moment-with-locales.min.js", 10), null),
-	MomentAngularReference(new JavascriptReference("MomentAngularJS", 0.103, "bower_components/angular-moment/angular-moment.min.js", "https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.6/angular-moment.min.js", 11), null);
+	MomentReference(new JavascriptReference("MomentJS", 2.151, "bower_components/moment/min/moment-with-locales.min.js",
+	                                        "https://cdnjs.com/libraries/moment.js/2.15.1/moment-with-locales.min.js", 10), null),
+	MomentAngularReference(new JavascriptReference("MomentAngularJS", 0.103, "bower_components/angular-moment/angular-moment.min.js",
+	                                               "https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.6/angular-moment.min.js", 11), null);
 
 	/**
 	 * The JavaScript Reference

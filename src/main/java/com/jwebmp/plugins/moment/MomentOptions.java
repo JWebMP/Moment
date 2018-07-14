@@ -28,7 +28,8 @@ import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
  * 		<p>
  * @since Mar 4, 2015
  */
-class MomentOptions extends JavaScriptPart
+class MomentOptions
+		extends JavaScriptPart
 {
 
 	private static final long serialVersionUID = 1L;

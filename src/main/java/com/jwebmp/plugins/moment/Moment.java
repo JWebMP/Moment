@@ -29,8 +29,7 @@ import java.util.Date;
 import java.util.EnumMap;
 import java.util.Map;
 
-import static com.jwebmp.utilities.StaticStrings.DEFAULT_DATE_TIME_PATTERN;
-import static com.jwebmp.utilities.StaticStrings.STRING_SINGLE_QUOTES;
+import static com.jwebmp.utilities.StaticStrings.*;
 
 /**
  * The Moment.js implementation
@@ -67,7 +66,6 @@ public class Moment<J extends Moment<J>>
 	 * The variable name if this moment is bound
 	 */
 	private String variableName;
-
 
 	private Map<MomentFilters, String> appliedFilters;
 

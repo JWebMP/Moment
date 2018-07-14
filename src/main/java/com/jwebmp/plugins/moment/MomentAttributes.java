@@ -19,7 +19,7 @@ package com.jwebmp.plugins.moment;
 import com.jwebmp.base.html.interfaces.AttributeDefinitions;
 import com.jwebmp.utilities.StaticStrings;
 
-import static com.jwebmp.utilities.StaticStrings.CHAR_DASH;
+import static com.jwebmp.utilities.StaticStrings.*;
 
 /**
  * Specifies the am time ago flag for moment accessing
@@ -36,7 +36,6 @@ enum MomentAttributes
 	MomentAttributes()
 	{
 	}
-
 
 	@Override
 	public boolean isKeyword()

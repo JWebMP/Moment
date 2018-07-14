@@ -28,7 +28,10 @@ import com.jwebmp.plugins.jquery.JQueryPageConfigurator;
  */
 @PluginInformation(pluginName = "Moment.js",
 		pluginUniqueName = "moment-datetime",
-		pluginDescription = "Moment.js provides a wrapper for the native JavaScript date object. In doing this, Moment.js extends the functionality and also accounts for several deficiencies in the object.\n" + "<br/>" + "Parsing is notably unpredictable with native date. For instance, suppose I am using a computer in the United States, but I have a date in DD/MM/YYYY format.",
+		pluginDescription =
+				"Moment.js provides a wrapper for the native JavaScript date object. In doing this, Moment.js extends the functionality and also accounts for several deficiencies in the object.\n" +
+				"<br/>" +
+				"Parsing is notably unpredictable with native date. For instance, suppose I am using a computer in the United States, but I have a date in DD/MM/YYYY format.",
 		pluginVersion = "2.17.1",
 		pluginDependancyUniqueIDs = "jquery,angular",
 		pluginCategories = "bootstrap,web ui,ui,framework,date picker,date time, moment",
