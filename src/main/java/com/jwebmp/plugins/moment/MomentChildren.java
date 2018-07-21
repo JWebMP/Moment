@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.moment;
 
-import com.jwebmp.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 
 /**
  * @author Marc Magon

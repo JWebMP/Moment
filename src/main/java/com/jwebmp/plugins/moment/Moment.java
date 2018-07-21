@@ -16,12 +16,12 @@
  */
 package com.jwebmp.plugins.moment;
 
-import com.jwebmp.base.angular.AngularPageConfigurator;
-import com.jwebmp.base.html.Div;
-import com.jwebmp.base.html.interfaces.GlobalChildren;
-import com.jwebmp.base.servlets.enumarations.ComponentTypes;
-import com.jwebmp.plugins.ComponentInformation;
-import com.jwebmp.utilities.StaticStrings;
+import com.jwebmp.core.base.angular.AngularPageConfigurator;
+import com.jwebmp.core.base.html.Div;
+import com.jwebmp.core.base.html.interfaces.GlobalChildren;
+import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
+import com.jwebmp.core.plugins.ComponentInformation;
+import com.jwebmp.core.utilities.StaticStrings;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -29,7 +29,7 @@ import java.util.Date;
 import java.util.EnumMap;
 import java.util.Map;
 
-import static com.jwebmp.utilities.StaticStrings.*;
+import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * The Moment.js implementation

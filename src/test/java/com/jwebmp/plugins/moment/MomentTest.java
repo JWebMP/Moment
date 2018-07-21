@@ -16,7 +16,7 @@
  */
 package com.jwebmp.plugins.moment;
 
-import com.jwebmp.Page;
+import com.jwebmp.core.Page;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
