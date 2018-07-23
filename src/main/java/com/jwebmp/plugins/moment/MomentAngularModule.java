@@ -17,6 +17,7 @@
 package com.jwebmp.plugins.moment;
 
 import com.jwebmp.core.base.angular.modules.AngularModuleBase;
+import com.jwebmp.core.base.angular.services.IAngularModule;
 
 /**
  * Registers the moment angular module as available for the
@@ -27,6 +28,7 @@ import com.jwebmp.core.base.angular.modules.AngularModuleBase;
  */
 public class MomentAngularModule
 		extends AngularModuleBase
+		implements IAngularModule<MomentAngularModule>
 {
 
 	private static final long serialVersionUID = 1L;

@@ -17,10 +17,10 @@
 package com.jwebmp.plugins.moment;
 
 import com.jwebmp.core.Page;
-import com.jwebmp.core.PageConfigurator;
 import com.jwebmp.core.base.angular.AngularPageConfigurator;
 import com.jwebmp.core.plugins.PluginInformation;
 import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
+import com.jwebmp.core.services.IPageConfigurator;
 
 /**
  * @author GedMarc
@@ -45,11 +45,8 @@ import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
 		pluginIconImageUrl = "bower_components/moment/moment_logo.png",
 		pluginLastUpdatedDate = "2017/03/04")
 public class MomentPageConfigurator
-		extends PageConfigurator
+		implements IPageConfigurator
 {
-
-	private static final long serialVersionUID = 1L;
-
 	public MomentPageConfigurator()
 	{
 		//Nothing Needed
@@ -61,9 +58,6 @@ public class MomentPageConfigurator
 	{
 		if (!page.isConfigured())
 		{
-			page.getAngular()
-			    .getAngularModules()
-			    .add(new MomentAngularModule());
 			page.getBody()
 			    .getJavascriptReferences()
 			    .add(MomentReferencePool.MomentReference.getJavaScriptReference());
