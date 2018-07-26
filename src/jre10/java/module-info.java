@@ -16,5 +16,5 @@ module com.jwebmp.plugins.moment {
 
 	provides IPageConfigurator with MomentPageConfigurator;
 	provides IAngularModule with MomentAngularModule;
-
+	opens com.jwebmp.plugins.moment to com.fasterxml.jackson.databind,com.jwebmp.core;
 }
