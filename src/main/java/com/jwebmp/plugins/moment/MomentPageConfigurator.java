@@ -49,9 +49,39 @@ import javax.validation.constraints.NotNull;
 public class MomentPageConfigurator
 		implements IPageConfigurator
 {
+	/**
+	 * If this configurator is enabled
+	 */
+	private static boolean enabled = true;
+
 	public MomentPageConfigurator()
 	{
 		//Nothing Needed
+	}
+
+	/**
+	 * Method isEnabled returns the enabled of this AngularAnimatedChangePageConfigurator object.
+	 * <p>
+	 * If this configurator is enabled
+	 *
+	 * @return the enabled (type boolean) of this AngularAnimatedChangePageConfigurator object.
+	 */
+	public static boolean isEnabled()
+	{
+		return MomentPageConfigurator.enabled;
+	}
+
+	/**
+	 * Method setEnabled sets the enabled of this AngularAnimatedChangePageConfigurator object.
+	 * <p>
+	 * If this configurator is enabled
+	 *
+	 * @param mustEnable
+	 * 		the enabled of this AngularAnimatedChangePageConfigurator object.
+	 */
+	public static void setEnabled(boolean mustEnable)
+	{
+		MomentPageConfigurator.enabled = mustEnable;
 	}
 
 	@NotNull
@@ -72,5 +102,11 @@ public class MomentPageConfigurator
 			AngularPageConfigurator.setRequired(true);
 		}
 		return page;
+	}
+
+	@Override
+	public boolean enabled()
+	{
+		return MomentPageConfigurator.enabled;
 	}
 }
