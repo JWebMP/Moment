@@ -38,16 +38,16 @@ import javax.validation.constraints.NotNull;
 		pluginDependancyUniqueIDs = "jquery,angular",
 		pluginCategories = "bootstrap,web ui,ui,framework,date picker,date time, moment",
 		pluginSubtitle = "Parse, validate, manipulate, and display dates in JavaScript.",
-		pluginGitUrl = "https://github.com/GedMarc/JWebSwing-MomentPlugin",
+		pluginGitUrl = "https://github.com/GedMarc/JWebMP-MomentPlugin",
 		pluginSourceUrl = "https://momentjs.com/",
 		pluginOriginalHomepage = "https://momentjs.com",
-		pluginWikiUrl = "https://github.com/GedMarc/JWebSwing-MomentPlugin/wiki",
+		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-MomentPlugin/wiki",
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/MomentPlugin.jar/download",
 		pluginIconUrl = "bower_components/moment/moment_icon.png",
 		pluginIconImageUrl = "bower_components/moment/moment_logo.png",
 		pluginLastUpdatedDate = "2017/03/04")
 public class MomentPageConfigurator
-		implements IPageConfigurator
+		implements IPageConfigurator<MomentPageConfigurator>
 {
 	/**
 	 * If this configurator is enabled
