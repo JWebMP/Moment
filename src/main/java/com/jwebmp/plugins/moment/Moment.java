@@ -49,7 +49,6 @@ public class Moment<J extends Moment<J>>
 		implements GlobalChildren
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * The default date formatter which is parsed
@@ -398,6 +397,12 @@ public class Moment<J extends Moment<J>>
 	}
 
 	@Override
+	public int hashCode()
+	{
+		return super.hashCode();
+	}
+
+	@Override
 	public boolean equals(Object o)
 	{
 		if (this == o)
@@ -436,12 +441,6 @@ public class Moment<J extends Moment<J>>
 			return false;
 		}
 		return getAppliedFilters().equals(moment.getAppliedFilters());
-	}
-
-	@Override
-	public int hashCode()
-	{
-		return super.hashCode();
 	}
 
 	/**

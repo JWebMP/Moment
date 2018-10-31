@@ -30,7 +30,7 @@ class MomentFeature
 		extends Feature<MomentFeature, MomentOptions, MomentFeature>
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private MomentOptions options;
 
 	/**

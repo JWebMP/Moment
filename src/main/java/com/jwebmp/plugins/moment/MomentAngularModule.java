@@ -31,7 +31,6 @@ public class MomentAngularModule
 		implements IAngularModule<MomentAngularModule>
 {
 
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Constructs a new angular module
