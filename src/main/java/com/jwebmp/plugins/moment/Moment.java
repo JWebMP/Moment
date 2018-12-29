@@ -16,7 +16,6 @@
  */
 package com.jwebmp.plugins.moment;
 
-import com.jwebmp.core.base.angular.AngularPageConfigurator;
 import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
@@ -80,7 +79,6 @@ public class Moment<J extends Moment<J>>
 		numberFormatter.setMinimumIntegerDigits(2);
 		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		setAssignedDate(new Date());
-		AngularPageConfigurator.setRequired(true);
 	}
 
 	/**
@@ -98,7 +96,6 @@ public class Moment<J extends Moment<J>>
 		DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
 		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.assignedDate = assignedDate;
-		AngularPageConfigurator.setRequired(true);
 	}
 
 	/**
@@ -116,7 +113,6 @@ public class Moment<J extends Moment<J>>
 		DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
 		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.variableName = variableName;
-		AngularPageConfigurator.setRequired(true);
 	}
 
 	/**
@@ -131,7 +127,6 @@ public class Moment<J extends Moment<J>>
 		DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
 		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.assignedDate = assignedDate;
-		AngularPageConfigurator.setRequired(true);
 	}
 
 	/**
@@ -146,7 +141,6 @@ public class Moment<J extends Moment<J>>
 		DateFormatter = (SimpleDateFormat) SimpleDateFormat.getInstance();
 		DateFormatter.applyPattern(DEFAULT_DATE_TIME_PATTERN);
 		this.variableName = variableName;
-		AngularPageConfigurator.setRequired(true);
 	}
 
 	/**

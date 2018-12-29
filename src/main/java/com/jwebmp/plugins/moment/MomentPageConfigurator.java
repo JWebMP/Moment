@@ -17,7 +17,6 @@
 package com.jwebmp.plugins.moment;
 
 import com.jwebmp.core.Page;
-import com.jwebmp.core.base.angular.AngularPageConfigurator;
 import com.jwebmp.core.plugins.PluginInformation;
 import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
 import com.jwebmp.core.services.IPageConfigurator;
@@ -97,9 +96,7 @@ public class MomentPageConfigurator
 			page.getBody()
 			    .getJavascriptReferences()
 			    .add(MomentReferencePool.MomentAngularReference.getJavaScriptReference());
-
 			JQueryPageConfigurator.setRequired(true);
-			AngularPageConfigurator.setRequired(true);
 		}
 		return page;
 	}
