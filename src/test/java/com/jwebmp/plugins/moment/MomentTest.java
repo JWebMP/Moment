@@ -17,7 +17,6 @@
 package com.jwebmp.plugins.moment;
 
 import com.jwebmp.core.Page;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Date;
@@ -44,12 +43,6 @@ public class MomentTest
 		 .setDynamicRender(false);
 		p.renderJavascript();
 		System.out.println(p.toString(true));
-
-		if (!p.toString(true)
-		      .contains("'angularMoment'"))
-		{
-			Assertions.fail("didn't put moment module into the angular script");
-		}
 	}
 
 	@Test
