@@ -1,10 +1,3 @@
-
-import com.jwebmp.core.services.IPageConfigurator;
-import com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions;
-import com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions;
-import com.jwebmp.plugins.moment.MomentPageConfigurator;
-import com.jwebmp.plugins.moment.implementations.MomentExclusionsModule;
-
 module com.jwebmp.plugins.moment {
 
 	exports com.jwebmp.plugins.moment;
@@ -17,10 +10,10 @@ module com.jwebmp.plugins.moment {
 	requires java.logging;
 	requires com.jwebmp.guicedinjection;
 
-	provides IPageConfigurator with MomentPageConfigurator;
+	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.moment.MomentPageConfigurator;
 
-	provides IGuiceScanJarExclusions with MomentExclusionsModule;
-	provides IGuiceScanModuleExclusions with MomentExclusionsModule;
+	provides com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions with com.jwebmp.plugins.moment.implementations.MomentExclusionsModule;
+	provides com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.moment.implementations.MomentExclusionsModule;
 
 
 	opens com.jwebmp.plugins.moment to com.fasterxml.jackson.databind, com.jwebmp.core;
