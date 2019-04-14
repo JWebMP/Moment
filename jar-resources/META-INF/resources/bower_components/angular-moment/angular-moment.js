@@ -1,4 +1,4 @@
-/* angular-moment.js / v1.0.1 / (c) 2013, 2014, 2015, 2016 Uri Shaked / MIT Licence */
+/* angular-moment.js / v1.3.0 / (c) 2013, 2014, 2015, 2016, 2017, 2018 Uri Shaked / MIT Licence */
 
 'format amd';
 /* global define */
@@ -20,10 +20,10 @@
 
 	function angularMoment(angular, moment) {
 
-		if (typeof moment === 'undefined') {
-			if (typeof require === 'function') {
+		if(typeof moment === 'undefined') {
+			if(typeof require === 'function') {
 				moment = requireMoment();
-			} else {
+			}else{
 				throw new Error('Moment cannot be found by angular-moment! Please reference to: https://github.com/urish/angular-moment'); // Add wiki/troubleshooting section?
 			}
 		}
@@ -104,23 +104,23 @@
 				statefulFilters: true
 			})
 
-			/**
-			 * @ngdoc object
-			 * @name angularMoment.object:moment
-			 *
-			 * @description
-			 * moment global (as provided by the moment.js library)
-			 */
+		/**
+		 * @ngdoc object
+		 * @name angularMoment.object:moment
+		 *
+		 * @description
+		 * moment global (as provided by the moment.js library)
+		 */
 			.constant('moment', moment)
 
-			/**
-			 * @ngdoc object
-			 * @name angularMoment.config:amTimeAgoConfig
-			 * @module angularMoment
-			 *
-			 * @description
-			 * configuration specific to the amTimeAgo directive
-			 */
+		/**
+		 * @ngdoc object
+		 * @name angularMoment.config:amTimeAgoConfig
+		 * @module angularMoment
+		 *
+		 * @description
+		 * configuration specific to the amTimeAgo directive
+		 */
 			.constant('amTimeAgoConfig', {
 				/**
 				 * @ngdoc property
@@ -183,13 +183,13 @@
 				fullDateThresholdUnit: 'day'
 			})
 
-			/**
-			 * @ngdoc directive
-			 * @name angularMoment.directive:amTimeAgo
-			 * @module angularMoment
-			 *
-			 * @restrict A
-			 */
+		/**
+		 * @ngdoc directive
+		 * @name angularMoment.directive:amTimeAgo
+		 * @module angularMoment
+		 *
+		 * @restrict A
+		 */
 			.directive('amTimeAgo', ['$window', 'moment', 'amMoment', 'amTimeAgoConfig', function ($window, moment, amMoment, amTimeAgoConfig) {
 
 				return function (scope, element, attr) {
@@ -337,11 +337,11 @@
 				};
 			}])
 
-			/**
-			 * @ngdoc service
-			 * @name angularMoment.service.amMoment
-			 * @module angularMoment
-			 */
+		/**
+		 * @ngdoc service
+		 * @name angularMoment.service.amMoment
+		 * @module angularMoment
+		 */
 			.service('amMoment', ['moment', '$rootScope', '$log', 'angularMomentConfig', function (moment, $rootScope, $log, angularMomentConfig) {
 				var defaultTimezone = null;
 
@@ -423,48 +423,48 @@
 				};
 			}])
 
-			/**
-			 * @ngdoc filter
-			 * @name angularMoment.filter:amParse
-			 * @module angularMoment
-			 */
+		/**
+		 * @ngdoc filter
+		 * @name angularMoment.filter:amParse
+		 * @module angularMoment
+		 */
 			.filter('amParse', ['moment', function (moment) {
 				return function (value, format) {
 					return moment(value, format);
 				};
 			}])
 
-			/**
-			 * @ngdoc filter
-			 * @name angularMoment.filter:amFromUnix
-			 * @module angularMoment
-			 */
+		/**
+		 * @ngdoc filter
+		 * @name angularMoment.filter:amFromUnix
+		 * @module angularMoment
+		 */
 			.filter('amFromUnix', ['moment', function (moment) {
 				return function (value) {
 					return moment.unix(value);
 				};
 			}])
 
-			/**
-			 * @ngdoc filter
-			 * @name angularMoment.filter:amUtc
-			 * @module angularMoment
-			 */
+		/**
+		 * @ngdoc filter
+		 * @name angularMoment.filter:amUtc
+		 * @module angularMoment
+		 */
 			.filter('amUtc', ['moment', function (moment) {
 				return function (value) {
 					return moment.utc(value);
 				};
 			}])
 
-			/**
-			 * @ngdoc filter
-			 * @name angularMoment.filter:amUtcOffset
-			 * @module angularMoment
-			 *
-			 * @description
-			 * Adds a UTC offset to the given timezone object. The offset can be a number of minutes, or a string such as
-			 * '+0300', '-0300' or 'Z'.
-			 */
+		/**
+		 * @ngdoc filter
+		 * @name angularMoment.filter:amUtcOffset
+		 * @module angularMoment
+		 *
+		 * @description
+		 * Adds a UTC offset to the given timezone object. The offset can be a number of minutes, or a string such as
+		 * '+0300', '-0300' or 'Z'.
+		 */
 			.filter('amUtcOffset', ['amMoment', function (amMoment) {
 				function amUtcOffset(value, offset) {
 					return amMoment.preprocessDate(value).utcOffset(offset);
@@ -473,27 +473,27 @@
 				return amUtcOffset;
 			}])
 
-			/**
-			 * @ngdoc filter
-			 * @name angularMoment.filter:amLocal
-			 * @module angularMoment
-			 */
+		/**
+		 * @ngdoc filter
+		 * @name angularMoment.filter:amLocal
+		 * @module angularMoment
+		 */
 			.filter('amLocal', ['moment', function (moment) {
 				return function (value) {
 					return moment.isMoment(value) ? value.local() : null;
 				};
 			}])
 
-			/**
-			 * @ngdoc filter
-			 * @name angularMoment.filter:amTimezone
-			 * @module angularMoment
-			 *
-			 * @description
-			 * Apply a timezone onto a given moment object, e.g. 'America/Phoenix').
-			 *
-			 * You need to include moment-timezone.js for timezone support.
-			 */
+		/**
+		 * @ngdoc filter
+		 * @name angularMoment.filter:amTimezone
+		 * @module angularMoment
+		 *
+		 * @description
+		 * Apply a timezone onto a given moment object, e.g. 'America/Phoenix').
+		 *
+		 * You need to include moment-timezone.js for timezone support.
+		 */
 			.filter('amTimezone', ['amMoment', 'angularMomentConfig', '$log', function (amMoment, angularMomentConfig, $log) {
 				function amTimezone(value, timezone) {
 					var aMoment = amMoment.preprocessDate(value);
@@ -513,11 +513,11 @@
 				return amTimezone;
 			}])
 
-			/**
-			 * @ngdoc filter
-			 * @name angularMoment.filter:amCalendar
-			 * @module angularMoment
-			 */
+		/**
+		 * @ngdoc filter
+		 * @name angularMoment.filter:amCalendar
+		 * @module angularMoment
+		 */
 			.filter('amCalendar', ['moment', 'amMoment', 'angularMomentConfig', function (moment, amMoment, angularMomentConfig) {
 				function amCalendarFilter(value, referenceTime, formats) {
 					if (isUndefinedOrNull(value)) {
@@ -535,11 +535,11 @@
 				return amCalendarFilter;
 			}])
 
-			/**
-			 * @ngdoc filter
-			 * @name angularMoment.filter:amDifference
-			 * @module angularMoment
-			 */
+		/**
+		 * @ngdoc filter
+		 * @name angularMoment.filter:amDifference
+		 * @module angularMoment
+		 */
 			.filter('amDifference', ['moment', 'amMoment', 'angularMomentConfig', function (moment, amMoment, angularMomentConfig) {
 				function amDifferenceFilter(value, otherValue, unit, usePrecision) {
 					if (isUndefinedOrNull(value)) {
@@ -561,12 +561,12 @@
 				return amDifferenceFilter;
 			}])
 
-			/**
-			 * @ngdoc filter
-			 * @name angularMoment.filter:amDateFormat
-			 * @module angularMoment
-			 * @function
-			 */
+		/**
+		 * @ngdoc filter
+		 * @name angularMoment.filter:amDateFormat
+		 * @module angularMoment
+		 * @function
+		 */
 			.filter('amDateFormat', ['moment', 'amMoment', 'angularMomentConfig', function (moment, amMoment, angularMomentConfig) {
 				function amDateFormatFilter(value, format) {
 					if (isUndefinedOrNull(value)) {
@@ -586,12 +586,12 @@
 				return amDateFormatFilter;
 			}])
 
-			/**
-			 * @ngdoc filter
-			 * @name angularMoment.filter:amDurationFormat
-			 * @module angularMoment
-			 * @function
-			 */
+		/**
+		 * @ngdoc filter
+		 * @name angularMoment.filter:amDurationFormat
+		 * @module angularMoment
+		 * @function
+		 */
 			.filter('amDurationFormat', ['moment', 'angularMomentConfig', function (moment, angularMomentConfig) {
 				function amDurationFormatFilter(value, format, suffix) {
 					if (isUndefinedOrNull(value)) {
@@ -606,12 +606,12 @@
 				return amDurationFormatFilter;
 			}])
 
-			/**
-			 * @ngdoc filter
-			 * @name angularMoment.filter:amTimeAgo
-			 * @module angularMoment
-			 * @function
-			 */
+		/**
+		 * @ngdoc filter
+		 * @name angularMoment.filter:amTimeAgo
+		 * @module angularMoment
+		 * @function
+		 */
 			.filter('amTimeAgo', ['moment', 'amMoment', 'angularMomentConfig', function (moment, amMoment, angularMomentConfig) {
 				function amTimeAgoFilter(value, suffix, from) {
 					var date, dateFrom;
@@ -639,12 +639,12 @@
 				return amTimeAgoFilter;
 			}])
 
-			/**
-			 * @ngdoc filter
-			 * @name angularMoment.filter:amSubtract
-			 * @module angularMoment
-			 * @function
-			 */
+		/**
+		 * @ngdoc filter
+		 * @name angularMoment.filter:amSubtract
+		 * @module angularMoment
+		 * @function
+		 */
 			.filter('amSubtract', ['moment', 'angularMomentConfig', function (moment, angularMomentConfig) {
 				function amSubtractFilter(value, amount, type) {
 
@@ -660,12 +660,12 @@
 				return amSubtractFilter;
 			}])
 
-			/**
-			 * @ngdoc filter
-			 * @name angularMoment.filter:amAdd
-			 * @module angularMoment
-			 * @function
-			 */
+		/**
+		 * @ngdoc filter
+		 * @name angularMoment.filter:amAdd
+		 * @module angularMoment
+		 * @function
+		 */
 			.filter('amAdd', ['moment', 'angularMomentConfig', function (moment, angularMomentConfig) {
 				function amAddFilter(value, amount, type) {
 
@@ -681,12 +681,12 @@
 				return amAddFilter;
 			}])
 
-			/**
-			 * @ngdoc filter
-			 * @name angularMoment.filter:amStartOf
-			 * @module angularMoment
-			 * @function
-			 */
+		/**
+		 * @ngdoc filter
+		 * @name angularMoment.filter:amStartOf
+		 * @module angularMoment
+		 * @function
+		 */
 			.filter('amStartOf', ['moment', 'angularMomentConfig', function (moment, angularMomentConfig) {
 				function amStartOfFilter(value, type) {
 
@@ -702,12 +702,12 @@
 				return amStartOfFilter;
 			}])
 
-			/**
-			 * @ngdoc filter
-			 * @name angularMoment.filter:amEndOf
-			 * @module angularMoment
-			 * @function
-			 */
+		/**
+		 * @ngdoc filter
+		 * @name angularMoment.filter:amEndOf
+		 * @module angularMoment
+		 * @function
+		 */
 			.filter('amEndOf', ['moment', 'angularMomentConfig', function (moment, angularMomentConfig) {
 				function amEndOfFilter(value, type) {
 
@@ -721,7 +721,7 @@
 				amEndOfFilter.$stateful = angularMomentConfig.statefulFilters;
 
 				return amEndOfFilter;
-			}]);
+ 			}]);
 
 		return 'angularMoment';
 	}
@@ -732,6 +732,6 @@
 	} else if (typeof module !== 'undefined' && module && module.exports && (typeof require === 'function') && !isElectron) {
 		module.exports = angularMoment(require('angular'), require('moment'));
 	} else {
-		angularMoment(angular, (typeof global !== 'undefined' ? global : window).moment);
+		angularMoment(angular, (typeof global !== 'undefined' && typeof global.moment !== 'undefined' ? global : window).moment);
 	}
 })();
