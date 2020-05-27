@@ -4,7 +4,6 @@ module com.jwebmp.plugins.moment {
 
 	requires com.jwebmp.core;
 	requires com.guicedee.logmaster;
-	requires com.fasterxml.jackson.annotation;
 
 	requires java.validation;
 	requires java.logging;
@@ -17,6 +16,6 @@ module com.jwebmp.plugins.moment {
 
 	provides com.jwebmp.core.base.angular.services.IAngularModule with com.jwebmp.plugins.moment.implementations.MomentAngularModule;
 
-	opens com.jwebmp.plugins.moment to com.fasterxml.jackson.databind, com.jwebmp.core,com.google.guice;
-	opens com.jwebmp.plugins.moment.implementations to com.fasterxml.jackson.databind, com.jwebmp.core,com.google.guice;
+	opens com.jwebmp.plugins.moment to com.fasterxml.jackson.databind, com.jwebmp.core, com.google.guice;
+	opens com.jwebmp.plugins.moment.implementations to com.fasterxml.jackson.databind, com.jwebmp.core, com.google.guice;
 }
