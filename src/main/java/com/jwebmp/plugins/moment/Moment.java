@@ -28,6 +28,8 @@ import java.util.Date;
 import java.util.EnumMap;
 import java.util.Map;
 
+import static com.guicedee.guicedinjection.json.StaticStrings.*;
+import static com.guicedee.guicedinjection.json.StaticStrings.DEFAULT_DATE_TIME_PATTERN;
 import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
@@ -292,7 +294,7 @@ public class Moment<J extends Moment<J>>
 	public void AddUtcOffsetFilter(double timeToChange)
 	{
 		String timeSet = "+" + numberFormatter.format(timeToChange)
-		                                      .replace(StaticStrings.STRING_DOT, "");
+		                                      .replace(STRING_DOT, STRING_EMPTY);
 		getAppliedFilters().put(MomentFilters.amUtcOffset, timeSet);
 	}
 
