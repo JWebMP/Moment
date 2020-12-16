@@ -29,7 +29,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @author GedMarc
  * 		2since 201/10/05
  */
-enum MomentAttributes
+public enum MomentAttributes
 		implements AttributeDefinitions
 {
 

@@ -23,7 +23,7 @@ import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
  * @version 1.0
  * @since 07 Aug 2015
  */
-interface MomentFeatures
+public interface MomentFeatures
 		extends GlobalFeatures
 {
 

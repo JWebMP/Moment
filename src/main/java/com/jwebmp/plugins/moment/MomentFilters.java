@@ -25,10 +25,6 @@ package com.jwebmp.plugins.moment;
 public enum MomentFilters
 {
 	/**
-	 * Parses a custom-formatted date into a moment object that can be used with the am-time-ago directive and the other filters. For example, the following code will accept dates that are formatted
-	 * like "2015.04.25 22:00:15':
-	 */
-	/**
 	 * Parses a custom-formatted date into a moment object that can be used with the am-time-ago directive and the other filters. For example, the following code will accept dates
 	 * that are formatted
 	 * like "2015.04.25 22:00:15':

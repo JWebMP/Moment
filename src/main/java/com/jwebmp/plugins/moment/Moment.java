@@ -49,8 +49,6 @@ public class Moment<J extends Moment<J>>
 		extends Div<MomentChildren, MomentAttributes, MomentFeatures, MomentEvents, J>
 		implements GlobalChildren
 {
-
-
 	/**
 	 * The default date formatter which is parsed
 	 */
@@ -378,7 +376,7 @@ public class Moment<J extends Moment<J>>
 	 */
 	public void AddSubtractionFilter(int amount, DurationFilters part)
 	{
-		getAppliedFilters().put(MomentFilters.amSubtract, Integer.toString(amount) + "' : '" + part.toString() + "");
+		getAppliedFilters().put(MomentFilters.amSubtract, amount + "' : '" + part.toString() + "");
 	}
 
 	/**
@@ -389,7 +387,7 @@ public class Moment<J extends Moment<J>>
 	 */
 	public void AddAdditionFilter(int amount, DurationFilters part)
 	{
-		getAppliedFilters().put(MomentFilters.amAdd, Integer.toString(amount) + "' : '" + part.toString() + "");
+		getAppliedFilters().put(MomentFilters.amAdd, amount + "' : '" + part.toString() + "");
 	}
 
 	@Override

@@ -18,6 +18,7 @@ package com.jwebmp.plugins.moment;
 
 import com.jwebmp.core.Page;
 import com.jwebmp.core.plugins.PluginInformation;
+import com.jwebmp.core.plugins.PluginStatus;
 import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
 import com.jwebmp.core.services.IPageConfigurator;
 
@@ -41,10 +42,15 @@ import jakarta.validation.constraints.NotNull;
 		pluginSourceUrl = "https://momentjs.com/",
 		pluginOriginalHomepage = "https://momentjs.com",
 		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-MomentPlugin/wiki",
-		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/MomentPlugin.jar/download",
+		pluginDownloadUrl = "https://mvnrepository.com/artifact/com.jwebmp.plugins.javascript/jwebmp-momentjs",
 		pluginIconUrl = "bower_components/moment/moment_icon.png",
 		pluginIconImageUrl = "bower_components/moment/moment_logo.png",
-		pluginLastUpdatedDate = "2017/03/04")
+		pluginLastUpdatedDate = "2017/03/04",
+		pluginGroupId = "com.jwebmp.plugins.javascript",
+		pluginArtifactId = "jwebmp-momentjs",
+		pluginModuleName = "com.jwebmp.plugins.moment",
+		pluginStatus = PluginStatus.Released
+)
 public class MomentPageConfigurator
 		implements IPageConfigurator<MomentPageConfigurator>
 {

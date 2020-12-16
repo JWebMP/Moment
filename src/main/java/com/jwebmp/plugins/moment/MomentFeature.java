@@ -16,8 +16,8 @@
  */
 package com.jwebmp.plugins.moment;
 
-import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
+import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
 
 /**
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents
@@ -26,11 +26,10 @@ import com.jwebmp.core.Feature;
  * @version 1.0
  * @since 2013/01/16
  */
-class MomentFeature
+public class MomentFeature
 		extends Feature<MomentFeature, MomentOptions, MomentFeature>
 {
-
-
+	
 	private MomentOptions options;
 
 	/**
@@ -39,7 +38,7 @@ class MomentFeature
 	 *
 	 * @param forComponent
 	 */
-	public MomentFeature(Component forComponent)
+	public MomentFeature(IComponentHierarchyBase<?,?> forComponent)
 	{
 		super("MomentJS");
 		setComponent(forComponent);

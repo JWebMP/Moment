@@ -28,8 +28,8 @@ import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
  * 		<p>
  * @since Mar 4, 2015
  */
-class MomentOptions
-		extends JavaScriptPart
+public class MomentOptions
+		extends JavaScriptPart<MomentOptions>
 {
 
 
