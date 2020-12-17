@@ -92,7 +92,7 @@ public class MomentPageConfigurator
 	@NotNull
 	@Override
 	@SuppressWarnings("unchecked")
-	public Page configure(Page page)
+	 public Page<?> configure(Page<?> page)
 	{
 		if (!page.isConfigured() && enabled())
 		{

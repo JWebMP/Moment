@@ -36,7 +36,7 @@ public class MomentTest
 	@SuppressWarnings("unchecked")
 	public void testGetFeature()
 	{
-		Page p = new Page();
+		Page<?> p = new Page();
 		p.getBody()
 		 .add(new Moment(new Date()));
 		p.getOptions()
@@ -49,7 +49,7 @@ public class MomentTest
 	@SuppressWarnings("unchecked")
 	public void testJavascript()
 	{
-		Page p = new Page();
+		Page<?> p = new Page();
 		p.getBody()
 		 .add(new Moment(new Date()));
 		p.getOptions()
