@@ -11,7 +11,7 @@
 
     <artifactId>jwebmp-momentjs</artifactId>
     <packaging>jar</packaging>
-
+    <version>0.0.0_0-SNAPSHOT</version>
     <name>MomentJS</name>
     <description>The JWebSwing implementation for MomentJS Date Time Handling</description>
     <url>https://github.com/GedMarc/JWebSwing-Moment</url>
