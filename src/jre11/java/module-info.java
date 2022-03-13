@@ -10,7 +10,7 @@ module com.jwebmp.plugins.moment {
 	requires jakarta.validation;
 	requires java.logging;
 	requires com.guicedee.guicedinjection;
-	requires com.jwebmp.core.angularjs;
+	requires com.jwebmp.core.angular;
 
 	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.moment.MomentPageConfigurator;
 
