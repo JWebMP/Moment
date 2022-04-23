@@ -13,11 +13,6 @@ module com.jwebmp.plugins.moment {
 	requires com.jwebmp.core.angular;
 
 	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.moment.MomentPageConfigurator;
-
-	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleExclusions with com.jwebmp.plugins.moment.implementations.MomentExclusionsModule;
-
-	provides com.jwebmp.core.base.angular.services.IAngularModule with com.jwebmp.plugins.moment.implementations.MomentAngularModule;
-	
 	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleInclusions with MomentIncludeModule;
 
 	opens com.jwebmp.plugins.moment to com.fasterxml.jackson.databind, com.jwebmp.core, com.google.guice;

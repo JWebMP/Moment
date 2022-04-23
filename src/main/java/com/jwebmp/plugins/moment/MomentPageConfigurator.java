@@ -16,13 +16,11 @@
  */
 package com.jwebmp.plugins.moment;
 
-import com.jwebmp.core.Page;
-import com.jwebmp.core.plugins.PluginInformation;
-import com.jwebmp.core.plugins.PluginStatus;
-import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
-import com.jwebmp.core.services.IPageConfigurator;
-
-import jakarta.validation.constraints.NotNull;
+import com.jwebmp.core.*;
+import com.jwebmp.core.base.angular.services.annotations.*;
+import com.jwebmp.core.plugins.*;
+import com.jwebmp.core.services.*;
+import jakarta.validation.constraints.*;
 
 /**
  * @author GedMarc
@@ -51,6 +49,7 @@ import jakarta.validation.constraints.NotNull;
 		pluginModuleName = "com.jwebmp.plugins.moment",
 		pluginStatus = PluginStatus.Released
 )
+@TsDependency(value = "moment",version = "^2.29.3")
 public class MomentPageConfigurator
 		implements IPageConfigurator<MomentPageConfigurator>
 {
@@ -94,16 +93,6 @@ public class MomentPageConfigurator
 	@SuppressWarnings("unchecked")
 	 public Page<?> configure(Page<?> page)
 	{
-		if (!page.isConfigured() && enabled())
-		{
-			page.getBody()
-			    .getJavascriptReferences()
-			    .add(MomentReferencePool.MomentReference.getJavaScriptReference());
-			page.getBody()
-			    .getJavascriptReferences()
-			    .add(MomentReferencePool.MomentAngularReference.getJavaScriptReference());
-			JQueryPageConfigurator.setRequired(true);
-		}
 		return page;
 	}
 
