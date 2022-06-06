@@ -17,7 +17,7 @@
 package com.jwebmp.plugins.moment;
 
 import com.jwebmp.core.*;
-import com.jwebmp.core.base.angular.services.annotations.*;
+import com.jwebmp.core.base.angular.client.annotations.typescript.*;
 import com.jwebmp.core.plugins.*;
 import com.jwebmp.core.services.*;
 import jakarta.validation.constraints.*;
@@ -49,7 +49,7 @@ import jakarta.validation.constraints.*;
 		pluginModuleName = "com.jwebmp.plugins.moment",
 		pluginStatus = PluginStatus.Released
 )
-@TsDependency(value = "moment",version = "^2.29.3")
+@TsDependency(value = "moment", version = "^2.29.3")
 public class MomentPageConfigurator
 		implements IPageConfigurator<MomentPageConfigurator>
 {

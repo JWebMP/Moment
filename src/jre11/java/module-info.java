@@ -3,14 +3,8 @@ import com.jwebmp.plugins.moment.implementations.MomentIncludeModule;
 module com.jwebmp.plugins.moment {
 
 	exports com.jwebmp.plugins.moment;
-
-	requires com.jwebmp.core;
-	requires com.guicedee.logmaster;
-
-	requires jakarta.validation;
-	requires java.logging;
-	requires com.guicedee.guicedinjection;
-	requires com.jwebmp.core.angular;
+	
+	requires com.jwebmp.core.base.angular.client;
 
 	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.moment.MomentPageConfigurator;
 	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleInclusions with MomentIncludeModule;

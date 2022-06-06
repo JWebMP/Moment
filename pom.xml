@@ -29,7 +29,7 @@
 
         <dependency>
             <groupId>com.jwebmp.plugins.angular</groupId>
-            <artifactId>angularts</artifactId>
+            <artifactId>angularts-client</artifactId>
         </dependency>
 
     </dependencies>
