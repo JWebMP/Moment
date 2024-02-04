@@ -5,7 +5,8 @@ module com.jwebmp.plugins.moment {
 	exports com.jwebmp.plugins.moment;
 	
 	requires com.jwebmp.core.base.angular.client;
-
+	requires com.guicedee.jsonrepresentation;
+	
 	provides com.jwebmp.core.services.IPageConfigurator with com.jwebmp.plugins.moment.MomentPageConfigurator;
 	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleInclusions with MomentIncludeModule;
 

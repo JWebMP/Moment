@@ -28,8 +28,8 @@ import java.util.Date;
 import java.util.EnumMap;
 import java.util.Map;
 
-import static com.guicedee.guicedinjection.json.StaticStrings.*;
-import static com.guicedee.guicedinjection.json.StaticStrings.DEFAULT_DATE_TIME_PATTERN;
+import static com.guicedee.services.jsonrepresentation.json.StaticStrings.*;
+import static com.guicedee.services.jsonrepresentation.json.StaticStrings.DEFAULT_DATE_TIME_PATTERN;
 import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
