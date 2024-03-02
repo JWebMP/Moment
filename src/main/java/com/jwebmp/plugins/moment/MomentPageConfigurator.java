@@ -49,7 +49,7 @@ import jakarta.validation.constraints.*;
         pluginModuleName = "com.jwebmp.plugins.moment",
         pluginStatus = PluginStatus.Released
 )
-@TsDependency(value = "moment", version = "^2.29.3")
+@TsDependency(value = "moment", version = "^2.30.1")
 public class MomentPageConfigurator
         implements IPageConfigurator<MomentPageConfigurator>
 {
