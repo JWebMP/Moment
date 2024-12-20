@@ -17,38 +17,36 @@
 package com.jwebmp.plugins.moment;
 
 import com.jwebmp.core.base.html.interfaces.AttributeDefinitions;
-import com.jwebmp.core.utilities.StaticStrings;
 
 import static com.guicedee.services.jsonrepresentation.json.StaticStrings.CHAR_DASH;
 import static com.guicedee.services.jsonrepresentation.json.StaticStrings.CHAR_UNDERSCORE;
-import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * Specifies the am time ago flag for moment accessing
  *
  * @author GedMarc
- * 		2since 201/10/05
+ * 2since 201/10/05
  */
 public enum MomentAttributes
-		implements AttributeDefinitions
+        implements AttributeDefinitions
 {
 
-	am_time_ago;
+    am_time_ago;
 
-	MomentAttributes()
-	{
-	}
+    MomentAttributes()
+    {
+    }
 
-	@Override
-	public boolean isKeyword()
-	{
-		return false;
-	}
+    @Override
+    public boolean isKeyword()
+    {
+        return false;
+    }
 
-	@Override
-	public String toString()
-	{
-		return name().toLowerCase()
-		             .replace(CHAR_UNDERSCORE, CHAR_DASH);
-	}
+    @Override
+    public String toString()
+    {
+        return name().toLowerCase()
+                .replace(CHAR_UNDERSCORE, CHAR_DASH);
+    }
 }

@@ -20,7 +20,6 @@ import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.base.html.interfaces.GlobalChildren;
 import com.jwebmp.core.base.servlets.enumarations.ComponentTypes;
 import com.jwebmp.core.plugins.ComponentInformation;
-import com.jwebmp.core.utilities.StaticStrings;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
@@ -30,7 +29,6 @@ import java.util.Map;
 
 import static com.guicedee.services.jsonrepresentation.json.StaticStrings.*;
 import static com.guicedee.services.jsonrepresentation.json.StaticStrings.DEFAULT_DATE_TIME_PATTERN;
-import static com.jwebmp.core.utilities.StaticStrings.*;
 
 /**
  * The Moment.js implementation
@@ -42,8 +40,8 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since 29 Aug 2015
  */
 @ComponentInformation(name = "Moment.js",
-                      description = "Parse, validate, manipulate, and display dates in JavaScript.",
-                      url = "https://github.com/urish/angular-moment")
+        description = "Parse, validate, manipulate, and display dates in JavaScript.",
+        url = "https://github.com/urish/angular-moment")
 public class Moment<J extends Moment<J>>
         extends Div<MomentChildren, MomentAttributes, MomentFeatures, MomentEvents, J>
         implements GlobalChildren
@@ -183,32 +181,30 @@ public class Moment<J extends Moment<J>>
         if (variableName != null)
         {
             sb.append(variableName);
-        }
-        else if (assignedDate != null)
+        } else if (assignedDate != null)
         {
             sb.append(STRING_SINGLE_QUOTES)
-              .append(DateFormatter.format(assignedDate))
-              .append(STRING_SINGLE_QUOTES);
+                    .append(DateFormatter.format(assignedDate))
+                    .append(STRING_SINGLE_QUOTES);
             getAppliedFilters().put(MomentFilters.amParse, "YYYY-MM-DD HH:mm:ss");
         }
         if (!getAppliedFilters().isEmpty())
         {
             getAppliedFilters().forEach((key, value) ->
-                                        {
-                                            if (value != null)
-                                            {
-                                                sb.append(" | ")
-                                                  .append(key)
-                                                  .append(" : '")
-                                                  .append(value)
-                                                  .append(STRING_SINGLE_QUOTES);
-                                            }
-                                            else
-                                            {
-                                                sb.append(" | ")
-                                                  .append(key);
-                                            }
-                                        });
+            {
+                if (value != null)
+                {
+                    sb.append(" | ")
+                            .append(key)
+                            .append(" : '")
+                            .append(value)
+                            .append(STRING_SINGLE_QUOTES);
+                } else
+                {
+                    sb.append(" | ")
+                            .append(key);
+                }
+            });
         }
         return sb.toString();
     }
@@ -284,7 +280,7 @@ public class Moment<J extends Moment<J>>
     public void AddUtcOffsetFilter(double timeToChange)
     {
         String timeSet = "+" + numberFormatter.format(timeToChange)
-                                              .replace(STRING_DOT, STRING_EMPTY);
+                .replace(STRING_DOT, STRING_EMPTY);
         getAppliedFilters().put(MomentFilters.amUtcOffset, timeSet);
     }
 
